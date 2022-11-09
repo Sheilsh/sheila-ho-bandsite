@@ -28,11 +28,13 @@
         padding-top: 1rem 0;
         list-style: none;
         display: flex;
-        gap: 12rem;
+   
 
     }
 
     &__items {
+        width: 16rem;
+        text-align: center;
     
         &--active {
             font-weight: 700;

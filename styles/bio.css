@@ -58,7 +58,10 @@ a {
   padding-top: 1rem 0;
   list-style: none;
   display: flex;
-  gap: 12rem;
+}
+.nav__items {
+  width: 16rem;
+  text-align: center;
 }
 .nav__items--active {
   font-weight: 700;
