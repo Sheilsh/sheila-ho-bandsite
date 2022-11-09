@@ -2,3 +2,61 @@
 @use './mixins' as *;
 
 // footer html styling
+
+.footer {
+    background-color: $primary-color1;
+    color: $primary-color3;
+    padding: 1.6rem;
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__header {
+        @include primaryHeading;
+        padding-top: 1.6rem;
+    }
+
+    &__icon-container {
+        display: flex;
+        gap: 3rem;
+    }
+
+    &__contact-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__name,
+    &__title {
+        @include secondaryHeading;
+        font-weight: 600;
+    }
+
+    &__address {
+        @include regularText;
+        margin: 1rem 0;
+        font-style: normal;
+    }
+
+    &__email, a {
+        @include regularText;
+        margin: 1rem 0;
+        color: $primary-color3;
+        font-style: normal;
+    }
+
+    &__copyright-header {
+        @include primaryHeading;
+        font-weight: 400;
+        text-transform: uppercase;
+        margin: 1rem 0;
+    }
+
+    &__copyright-text {
+        @include labelText;
+    }
+}

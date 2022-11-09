@@ -1,1 +1,218 @@
-/*# sourceMappingURL=bio.css.map */
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/font/AvenirNextLTPro-Regular.otf) format("otf");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/font/AvenirNextLTPro-Bold.otf) format("otf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(../../assets/font/AvenirNextLTPro-Demi.otf) format("otf");
+  font-weight: 600;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Avenir";
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav {
+  background-color: #323232;
+  color: #FFF;
+}
+.nav__container {
+  padding: 1.6rem 1.6rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav__header h2 {
+  font-size: 2rem;
+  font-weight: 400;
+  padding-bottom: 1rem;
+  color: #FFF;
+  text-transform: uppercase;
+}
+.nav__links {
+  font-family: "Avenir", sans-serif;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  padding-top: 1rem 0;
+  list-style: none;
+  display: flex;
+  gap: 12rem;
+}
+.nav__items--active {
+  font-weight: 700;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid #FFF;
+}
+
+.footer {
+  background-color: #323232;
+  color: #FFF;
+  padding: 1.6rem;
+}
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.footer__header {
+  font-family: "Avenir", sans-serif;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  padding-top: 1.6rem;
+}
+.footer__icon-container {
+  display: flex;
+  gap: 3rem;
+}
+.footer__contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.footer__name, .footer__title {
+  font-family: "Avenir", sans-serif;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 600;
+}
+.footer__address {
+  font-family: "Avenir", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  margin: 1rem 0;
+  font-style: normal;
+}
+.footer__email, .footer a {
+  font-family: "Avenir", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  margin: 1rem 0;
+  color: #FFF;
+  font-style: normal;
+}
+.footer__copyright-header {
+  font-family: "Avenir", sans-serif;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin: 1rem 0;
+}
+.footer__copyright-text {
+  font-family: "Avenir", sans-serif;
+  font-size: 1rem;
+  line-height: 2rem;
+}
+
+.hero {
+  background-image: url(../assets/images/hero-bio.jpg);
+  background-position: center;
+  background-size: cover;
+  min-width: 100vw;
+  height: 30vh;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(50, 50, 50, 0.4745098039);
+  z-index: 1;
+}
+.hero__container {
+  display: flex;
+}
+.hero__header {
+  font-family: "Avenir", sans-serif;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  padding: 1.6rem;
+  color: #FFF;
+  transform: translateY(130%);
+  z-index: 2;
+}
+
+.article {
+  padding: 1.6rem;
+}
+.article__header {
+  font-family: "Avenir", sans-serif;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  margin: 1.6rem 0;
+}
+.article__image {
+  max-width: 90vw;
+}
+.article__quote {
+  font-family: "Avenir", sans-serif;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 700;
+  margin: 1rem 0;
+  inline-size: 29rem;
+}
+.article__content-section {
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.article__subheader {
+  font-family: "Avenir", sans-serif;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  font-weight: 400;
+  margin-top: 1rem;
+}
+.article__description {
+  font-family: "Avenir", sans-serif;
+  font-size: 1.3rem;
+  line-height: 1.8rem;
+  inline-size: 28rem;
+}
+
+.gallery {
+  background-color: #FAFAFA;
+  padding: 1.6rem;
+}
+.gallery__header {
+  font-family: "Avenir", sans-serif;
+  font-size: 2.4rem;
+  line-height: 3.2rem;
+  padding-bottom: 1.6rem;
+}
+.gallery__container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+.gallery__container img {
+  width: 90vw;
+}/*# sourceMappingURL=bio.css.map */

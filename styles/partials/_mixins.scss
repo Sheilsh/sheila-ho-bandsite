@@ -2,28 +2,74 @@
 
 // mixins
 
-@mixin defaultFont ($font-size: 1, $line-height, $weight) {
+@mixin defaultFont ($font-size: 1, $line-height) {
     font-family: $type-face, sans-serif;  //variable
     font-size: $font-size;  //case by case
     line-height: $line-height; //case by case
-    font-weight: map-get($font-weights, $weight); //font-weight from variables , weight define by user (case by case)
 }
+
+
+//primary page/section header
+@mixin primaryHeading {
+    @include defaultFont(2.4rem, 3.2rem);
+}
+
+//sub header
+@mixin secondaryHeading {
+    @include defaultFont(1.4rem, 2.2rem);
+}
+
+//body and foooter 
+@mixin regularText {
+    @include defaultFont(1.3rem, 1.8rem);
+}
+
+// labels and buttons
+@mixin labelText {
+    @include defaultFont(1rem, 2rem);
+}
+
+// media queries
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+      @content;
+    }
+}
+  
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+
+
+// @mixin defaultFont ($font-size: 1, $line-height, $weight) {
+//     font-family: $type-face, sans-serif;  //variable
+//     font-size: $font-size;  //case by case
+//     line-height: $line-height; //case by case
+//     font-weight: map-get($font-weights, $weight); //font-weight from variables , weight define by user (case by case)
+// }
 
 // mobile text styles
 
-@mixin primaryHeading {
-    @include defaultFont(2.4rem, 3.2rem, bold);
-  
-}
+// //primary page/section header
+// @mixin primaryHeading {
+//     @include defaultFont(2.4rem, 3.2rem, bold);
+// }
 
-@mixin secondaryHeading {
-    @include defaultFont(1.4rem, 2.2rem, semi-bold);
-}
+// //sub header
+// @mixin secondaryHeading {
+//     @include defaultFont(1.4rem, 2.2rem, semi-bold);
+// }
 
-@mixin regularText {
-    @include defaultFont(1.3rem, 1.8rem, regular);
-}
+// //body and foooter 
+// @mixin regularText {
+//     @include defaultFont(1.3rem, 1.8rem, regular);
+// }
 
-@mixin labelText {
-    @include defaultFont(1rem, 2rem, bold);
-}
+// // labels and buttons
+// @mixin labelText {
+//     @include defaultFont(1rem, 2rem, bold);
+// }

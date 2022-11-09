@@ -7,4 +7,93 @@
 
 // all index.html styling
 
+.hero {
+    background-image: url(../assets/images/hero-bio.jpg);
+    background-position: center;
+    background-size: cover;
+    min-width: 100vw;
+    height: 30vh;
+    position: relative;
+
+    &::before {
+        content: "";
+        position: absolute;
+        left: 0; right: 0;
+        top: 0; bottom: 0;
+        background-color: #32323279;
+        z-index: 1;
+    }
+
+    &__container {
+        display: flex;
+    }
+
+    &__header {
+        @include primaryHeading;
+        padding: 1.6rem;
+        color: $primary-color3;
+        transform: translateY(130%);
+        z-index: 2;
+    }
+}
+
+.article {
+    padding: 1.6rem;
+
+    &__header {
+        @include primaryHeading;
+        margin: 1.6rem 0;
+    }
+
+    &__image {
+        max-width: 90vw;
+    }
+
+    &__quote {
+        @include secondaryHeading;
+        font-weight: 700;
+        margin: 1rem 0;
+        inline-size: 29rem;
+    }
+
+    &__content-section {
+        max-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__subheader {
+        @include secondaryHeading;
+        font-weight: 400;
+        margin-top: 1rem;
+    }
+
+    &__description {
+        @include regularText;
+        inline-size: 28rem;
+    }
+}
+
+.gallery {
+    background-color: $secondary-color3;
+    padding: 1.6rem;
+
+    &__header {
+        @include primaryHeading;
+        padding-bottom: 1.6rem;
+    }
+
+    &__container {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        img {
+            width: 90vw;
+        }
+    }
+}
+
 

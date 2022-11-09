@@ -15,5 +15,10 @@ html {
 }
 
 body {
-    @include defaultFont;
+    font-family: $type-face;
+    // padding: 0 1.6rem;
+}
+
+a {
+    text-decoration: none;
 }

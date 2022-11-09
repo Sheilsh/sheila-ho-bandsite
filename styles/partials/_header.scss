@@ -2,3 +2,45 @@
 @use './mixins' as *;
 
 // header nav styling
+
+.nav {
+    background-color: $primary-color1;
+    color: $primary-color3;
+
+    &__container {
+        padding: 1.6rem 1.6rem 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    &__header h2 {
+        // @include secondaryHeading;
+        font-size: 2rem;
+        font-weight: 400;
+        padding-bottom: 1rem;
+        color: $primary-color3;
+        text-transform: uppercase;
+    }
+
+    &__links {
+        @include secondaryHeading;
+        padding-top: 1rem 0;
+        list-style: none;
+        display: flex;
+        gap: 12rem;
+
+    }
+
+    &__items {
+    
+        &--active {
+            font-weight: 700;
+            padding-bottom: 1rem;
+            border-bottom: 3px solid $primary-color3;
+        }
+
+    }
+
+
+}
