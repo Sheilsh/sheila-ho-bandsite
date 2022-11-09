@@ -1,24 +1,4 @@
-@font-face {
-    font-family: 'Avenir';
-    src: url(../../assets/font/AvenirNextLTPro-Regular.otf) format("otf");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Avenir';
-    src: url(../../assets/font/AvenirNextLTPro-Bold.otf) format("otf");
-    font-weight: 700;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Avenir';
-    src: url(../../assets/font/AvenirNextLTPro-Demi.otf) format("otf");
-    font-weight: 600;
-    font-style: normal;
-}
-
+@use './fonts' as *;
 
 // Primary Colors
 $primary-color1: #323232;
@@ -29,17 +9,6 @@ $primary-color3: #FFF;
 $secondary-color1: #000;
 $secondary-color2: #E1E1E1;
 $secondary-color3: #FAFAFA;
-
-
-// Typeface
-$type-face: 'Avenir';
-
-// // font weight
-// $font-weights: (
-//     'regular': 400,
-//     'semi-bold': 600,
-//     'bold': 700
-// )
 
 
 // Mobile Styles
