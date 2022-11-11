@@ -10,6 +10,8 @@
 }
 
 
+//mobile text styles
+
 //primary page/section header
 @mixin primaryHeading {
     @include defaultFont(2.4rem, 3.2rem);
@@ -30,16 +32,41 @@
     @include defaultFont(1rem, 2rem);
 }
 
+
+//desktop & tablet text styles
+
+//primary page/section header
+@mixin primaryHeading2 {
+    @include defaultFont(6rem, 6.8rem);
+}
+
+//sub header
+@mixin secondaryHeading2 {
+    @include defaultFont(3.6rem, 4.4rem);
+}
+
+//body and foooter 
+@mixin regularText2 {
+    @include defaultFont(1.4rem, 2.2rem);
+}
+
+// labels and buttons
+@mixin labelText2 {
+    @include defaultFont(1.2rem, 2rem);
+}
+
+
+
 // media queries
 
 @mixin tablet {
-    @media screen and (min-width: $tablet-breakpoint) {
+    @media (min-width: $tablet-breakpoint) {
       @content;
     }
 }
   
 @mixin desktop {
-    @media screen and (min-width: $desktop-breakpoint) {
+    @media (min-width: $desktop-breakpoint) {
         @content;
     }
 }

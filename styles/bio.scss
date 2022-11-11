@@ -1,9 +1,10 @@
-@use './partials/fonts' as *;;
+@use './partials/fonts' as *;
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 @use './partials/global' as *;
 @use './partials/header' as *;
 @use './partials/footer' as *;
+
 
 
 // all index.html styling
@@ -35,19 +36,51 @@
         color: $primary-color3;
         transform: translateY(130%);
         z-index: 2;
+
+        @include tablet {
+            @include primaryHeading2;
+            padding: 2.6rem;
+        }
     }
+
+    @include tablet {
+        height: 60vh;
+        width: 100vw;
+    }
+
 }
 
 .article {
     padding: 1.6rem;
 
+    @include tablet {
+        display: flex;
+        flex-direction: column;
+        align-items: center
+    }
+
+    // &__container {
+    //     display: flex;
+    //     flex-direction: column;
+    // }
+
     &__header {
         @include primaryHeading;
         margin: 1.6rem 0;
+
+        @include tablet {
+            @include secondaryHeading2;
+            // padding: 0 2rem;
+            // TODO - FIX inline size for quote and description
+        }
     }
 
     &__image {
         max-width: 90vw;
+
+        @include tablet {
+           padding: 2rem 4rem;
+        }
     }
 
     &__quote {
@@ -55,6 +88,10 @@
         font-weight: 700;
         margin: 1rem 0;
         inline-size: 29rem;
+
+        @include tablet {
+            @include primaryHeading;
+        }
     }
 
     &__content-section {
