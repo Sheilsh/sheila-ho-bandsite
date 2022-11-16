@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" text="text/css" href="./styles/bio.css">
+    <link rel="stylesheet" href="./styles/bio.css">
     <title>BandSite</title>
 </head>
 
@@ -35,11 +35,15 @@
         <article class="article">
             <div class="article__container">
                 <h2 class="article__header">About the Musicians</h2>
-                <section class="article__mainbox">
-                    <img class="article__image" src="./assets/images/band.jpg" alt="band image">
-                    <p class="article__quote">“We push each other to be the best. It's not uncommon for one of us to say 'this needs to be better, back to the drawing board'"</p>
-                    <p class="article__quote article__quote--small">- Bryan Teddy, lead vocalist of The Bees Knees</p>
-                </section>
+                <div class="article__mainbox">
+                    <div class="article__imgbox">
+                        <img class="article__image" src="./assets/images/band.jpg" alt="band image">
+                    </div>
+                    <div class="article__quotebox">
+                        <p class="article__quote">“We push each other to be the best. It's not uncommon for one of us to say 'this needs to be better, back to the drawing board'"</p>
+                        <p class="article__quote article__quote--small">- Bryan Teddy, lead vocalist of The Bees Knees</p>
+                    </div>
+                </div>
                 <section class="article__content-section">
                     <h3 class="article__subheader">The Bees Knees</h3>
                     <div class="article__subbox">
@@ -65,17 +69,19 @@
         </section>
         <footer class="footer">
             <div class="footer__container">
-                <h3 class="footer__header">Get in Touch</h3>
-                <div class="footer__icon-container">
-                    <a class="footer__icons" href="https://www.instagram.com/">
-                        <img src="./assets/icons/SVG/Icon-instagram.svg" alt="instagram icon">
-                    </a>
-                    <a class="footer__icons" href="https://www.facebook.com/">
-                        <img src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook icon">
-                    </a>
-                    <a class="footer__icons" href="https://www.twitter.com">
-                        <img src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter icon">
-                    </a>
+                <div class="footer__socialbox">
+                    <h3 class="footer__header">Get in Touch</h3>
+                    <div class="footer__icon-container">
+                        <a class="footer__icons" href="https://www.instagram.com/">
+                            <img src="./assets/icons/SVG/Icon-instagram.svg" alt="instagram icon">
+                        </a>
+                        <a class="footer__icons" href="https://www.facebook.com/">
+                            <img src="./assets/icons/SVG/Icon-facebook.svg" alt="facebook icon">
+                        </a>
+                        <a class="footer__icons" href="https://www.twitter.com">
+                            <img src="./assets/icons/SVG/Icon-twitter.svg" alt="twitter icon">
+                        </a>
+                    </div>
                 </div>
                 <div class="footer__contact-container">
                     <div class="footer__contact">
@@ -104,10 +110,10 @@
                             <a href="mailto:cwhyte@archentertainment.com">cwhyte@archentertainment.com</a>
                         </address>
                     </div>
-                    <div class="footer__copyright">
-                        <h3 class="footer__copyright-header">Bandsite</h3>
-                        <p class="footer__copyright-text">Copyright The Bees Knees © 2021 All Rights Reserved</p>
-                    </div>
+                </div>
+                <div class="footer__copyright">
+                    <h3 class="footer__copyright-header">Bandsite</h3>
+                    <p class="footer__copyright-text">Copyright The Bees Knees © 2021 All Rights Reserved</p>
                 </div>
             </div>
         </footer>
