@@ -90,8 +90,10 @@
 
         @include tablet {
             max-width: 100%;
-            max-height: 48vh;
+            max-height: 43vh;
             overflow: hidden;
+            transform: rotateX(25deg);
+            //^ cropping the top of the image
         }
     }
 
