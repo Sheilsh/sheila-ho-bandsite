@@ -14,7 +14,7 @@
     background-position: center;
     background-size: cover;
     min-width: 100vw;
-    height: 30vh;
+    height: 20vh;
     position: relative;
 
     &::before {
@@ -28,24 +28,26 @@
 
     &__container {
         display: flex;
+        align-items: center;
+        height: 100%;
     }
 
     &__header {
         @include primaryHeading;
         padding: 1.6rem;
         color: $primary-color3;
-        transform: translateY(130%);
+        // transform: translateY(130%);
         z-index: 2;
 
         @include tablet {
             @include primaryHeading2;
-            padding: 2.6rem;
-            margin: 5rem 0;
+            padding: 3.6rem;
+            // margin: 5rem 0;
         }
     }
 
     @include tablet {
-        height: 60vh;
+        height: 45vh;
         width: 100vw;
     }
 
@@ -75,7 +77,7 @@
 
         @include tablet {
             @include secondaryHeading2;
-            margin: 2rem 0;
+            // margin: 2rem 0;
             // TODO - FIX inline size for quote and description
         }
     }
@@ -90,7 +92,7 @@
 
         @include tablet {
             max-width: 100%;
-            max-height: 43vh;
+            max-height: 35vh;
             overflow: hidden;
             transform: rotateX(25deg);
             //^ cropping the top of the image
@@ -102,13 +104,13 @@
 
         @include tablet {
             max-width: 85vw;
-            padding: 2rem 4rem;
+            padding: 0rem 4rem;
         }
     }
 
     &__quotebox {
         @include tablet {
-            margin: 2rem;
+            margin: 0 2rem;
         }
     }
     &__quote {
@@ -119,7 +121,7 @@
         
         @include tablet {
             @include primaryHeading;
-            font-size: 2rem;
+            font-size: 2.1rem;
             padding: 0 4.6rem;
             margin: 1rem 0;
             width: 100%;

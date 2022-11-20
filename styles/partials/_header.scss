@@ -33,6 +33,10 @@
         @include tablet {
             @include primaryHeading;
         }
+
+        @include desktop {
+            
+        }
     }
 
     &__links {
