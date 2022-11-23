@@ -70,34 +70,3 @@
         @content;
     }
 }
-
-
-
-// @mixin defaultFont ($font-size: 1, $line-height, $weight) {
-//     font-family: $type-face, sans-serif;  //variable
-//     font-size: $font-size;  //case by case
-//     line-height: $line-height; //case by case
-//     font-weight: map-get($font-weights, $weight); //font-weight from variables , weight define by user (case by case)
-// }
-
-// mobile text styles
-
-// //primary page/section header
-// @mixin primaryHeading {
-//     @include defaultFont(2.4rem, 3.2rem, bold);
-// }
-
-// //sub header
-// @mixin secondaryHeading {
-//     @include defaultFont(1.4rem, 2.2rem, semi-bold);
-// }
-
-// //body and foooter 
-// @mixin regularText {
-//     @include defaultFont(1.3rem, 1.8rem, regular);
-// }
-
-// // labels and buttons
-// @mixin labelText {
-//     @include defaultFont(1rem, 2rem, bold);
-// }

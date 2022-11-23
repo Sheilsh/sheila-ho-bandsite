@@ -41,14 +41,23 @@
 
         @include tablet {
             @include primaryHeading2;
-            padding: 3.6rem;
+            padding: 0 3.6rem;
             // margin: 5rem 0;
+        }
+
+        @include desktop {
+            @include primaryHeading2;
+            padding: 0 10rem;
         }
     }
 
     @include tablet {
         height: 45vh;
         width: 100vw;
+    }
+
+    @include desktop {
+        height: 65vh;
     }
 
 }
@@ -63,22 +72,16 @@
         padding: 3.6rem;
     }
 
-    // &__container {
-
-    //    @include tablet {
-    //         display: grid;
-    //         justify-items: center;
-    //    }
-    // }
+    @include desktop {
+        padding: 4rem 10rem;
+    }
 
     &__header {
         @include primaryHeading;
-        margin: 1.6rem 0;
+        margin: 0.6rem 0;
 
         @include tablet {
             @include secondaryHeading2;
-            // margin: 2rem 0;
-            // TODO - FIX inline size for quote and description
         }
     }
 
@@ -86,6 +89,10 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        @include desktop {
+            align-items: flex-start;
+        }
     }
 
     &__imgbox {
@@ -97,6 +104,12 @@
             transform: rotateX(25deg);
             //^ cropping the top of the image
         }
+
+        @include desktop {
+            max-width: 100%;
+            max-height: 54vh;
+            transform: rotateX(25deg);
+        }
     }
 
     &__image {
@@ -105,6 +118,10 @@
         @include tablet {
             max-width: 85vw;
             padding: 0rem 4rem;
+        }
+
+        @include desktop {
+            padding: 0rem 10rem;
         }
     }
 
@@ -125,6 +142,11 @@
             padding: 0 4.6rem;
             margin: 1rem 0;
             width: 100%;
+        }
+
+        @include desktop {
+            inline-size: 81rem;
+            padding: 0 8rem;
         }
 
         &--small {
@@ -163,13 +185,16 @@
         gap: 2rem;
 
         @include tablet {
-            // display: grid;
-            // grid-template-columns: 1fr 1fr;
-            // justify-items: center;
             display: flex;
             flex-direction: row;
             width: 81%;
             margin: auto;
+        }
+
+        @include desktop {
+            gap: 4.5rem;
+            width: 80%;
+            margin: 0 10rem;
         }
     }
 
@@ -191,6 +216,10 @@
 
     @include tablet {
         padding: 3.6rem;
+    }
+
+    @include desktop {
+        padding: 3rem 10rem;
     }
 
     &__header {

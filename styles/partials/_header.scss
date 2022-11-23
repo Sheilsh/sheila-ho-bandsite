@@ -20,6 +20,11 @@
             align-items: flex-end;
             gap: 4rem;
         }
+
+        @include desktop {
+            padding: 3rem 10rem 0;
+            gap: 8rem;
+        }
     }
 
     &__header h2 {
@@ -35,7 +40,8 @@
         }
 
         @include desktop {
-            
+            // @include secondaryHeading2;
+            padding-bottom: 2rem;
         }
     }
 
@@ -44,6 +50,10 @@
         padding-top: 1rem 0;
         list-style: none;
         display: flex;
+
+        @include desktop {
+            gap: 4rem;
+        }
     }
     
 
@@ -59,6 +69,12 @@
 
         @include tablet {
             width: 8rem;
+        }
+
+        @include desktop {
+            @include regularText2;
+            width: 9rem;
+            padding-bottom: 2rem;
         }
 
     }

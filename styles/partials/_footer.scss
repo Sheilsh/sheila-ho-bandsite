@@ -13,6 +13,10 @@
         position: relative;
     }
 
+    @include desktop {
+        padding: 4rem 10rem;
+    }
+
     &__container {
         display: flex;
         flex-direction: column;
@@ -20,8 +24,6 @@
 
         @include tablet {
             gap: 3rem;
-            // display: flex;
-            // flex-direction: row;
         }
     }
 
@@ -30,7 +32,11 @@
         @include tablet {
             display: flex;
             align-items: center;
-            gap: 3rem;
+            gap: 4rem;
+        }
+
+        @include desktop {
+            gap: 5rem;
         }
     }
 
@@ -53,13 +59,17 @@
     &__contact-container {
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 2rem;
 
         @include tablet {
             display: flex;
             flex-direction: row;
-            justify-content: space-between;
-            // gap: 4rem;
+            // justify-content: space-between;
+            gap: 6rem;
+        }
+
+        @include desktop {
+            gap: 7rem;
         }
     }
 
@@ -101,5 +111,9 @@
 
     &__copyright-text {
         @include labelText;
+
+        @include tablet {
+            @include regularText2;
+        }
     }
 }
