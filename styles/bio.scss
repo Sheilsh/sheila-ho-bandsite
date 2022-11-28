@@ -2,7 +2,7 @@
 @use './partials/variables' as *;
 @use './partials/mixins' as *;
 @use './partials/global' as *;
-@use './partials/header' as *;
+@use './partials/nav' as *;
 @use './partials/footer' as *;
 
 
@@ -22,45 +22,18 @@
     display: flex;
     align-items: center;
 
-    // &::before {
-    //     content: "";
-    //     position: absolute;
-    //     left: 0; right: 0;
-    //     top: 0; bottom: 0;
-    //     background-color: #32323280;
-    //     z-index: 1;
-    // }
+    @include tablet {
+        height: 50rem;
+    }
 
-        @include tablet {
-            height: 50rem;
-        }
-    
-        @include desktop {
-            height: 65rem;
-        }
-
-    // removed header container / added properties to hero and header
-
-    // &__container {
-    //     display: flex;
-    //     align-items: center;
-    //     height: 20rem;
-
-    //     @include tablet {
-    //         height: 50rem;
-    //     }
-    
-    //     @include desktop {
-    //         height: 70rem;
-    //     }
-
-    // }
+    @include desktop {
+        height: 65rem;
+    }
 
     &__header {
         @include primaryHeading;
         color: $primary-color3;
         padding: 1.6rem;
-        // z-index: 2;
 
         @include tablet {
             @include primaryHeading2;
@@ -73,7 +46,6 @@
             padding: 0 10rem;
         }
     }
-
 }
 
 .article {
@@ -206,7 +178,7 @@
 
     &__subheader {
         @include secondaryHeading;
-        font-weight: 400;
+        font-weight: 500;
         margin-top: 2rem;
 
         @include tablet {

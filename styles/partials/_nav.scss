@@ -52,8 +52,8 @@
         display: flex;
         padding-top: 1rem 0;
 
-        @include desktop {
-            gap: 5rem;
+        @include tablet {
+            gap: 4rem;
         }
     }
     
@@ -65,7 +65,7 @@
         &--active {
             font-weight: 700;
             border-bottom: 3px solid $primary-color3;
-            padding-bottom: 2.5rem;
+            padding-bottom: 1rem;
         }
 
         &:hover,
@@ -76,14 +76,11 @@
 
         @include tablet {
             width: 7rem;
+            padding-bottom: 2.5rem;
         }
 
         @include desktop {
             @include regularText2;
-            padding-bottom: 2.5rem;
         }
-
     }
-
-
 }

@@ -90,9 +90,9 @@ a {
   display: flex;
   padding-top: 1rem 0;
 }
-@media (min-width: 1280px) {
+@media (min-width: 768px) {
   .nav__links {
-    gap: 5rem;
+    gap: 4rem;
   }
 }
 .nav__items {
@@ -102,7 +102,7 @@ a {
 .nav__items--active {
   font-weight: 700;
   border-bottom: 3px solid #FFF;
-  padding-bottom: 2.5rem;
+  padding-bottom: 1rem;
 }
 .nav__items:hover, .nav__items:active {
   border-bottom: 3px solid #FFF;
@@ -111,6 +111,7 @@ a {
 @media (min-width: 768px) {
   .nav__items {
     width: 7rem;
+    padding-bottom: 2.5rem;
   }
 }
 @media (min-width: 1280px) {
@@ -118,7 +119,6 @@ a {
     font-family: "Avenir", sans-serif;
     font-size: 1.4rem;
     line-height: 2.2rem;
-    padding-bottom: 2.5rem;
   }
 }
 
@@ -407,7 +407,7 @@ a {
   font-family: "Avenir", sans-serif;
   font-size: 1.4rem;
   line-height: 2.2rem;
-  font-weight: 400;
+  font-weight: 500;
   margin-top: 2rem;
 }
 @media (min-width: 768px) {
