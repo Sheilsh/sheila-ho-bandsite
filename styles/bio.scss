@@ -38,7 +38,6 @@
         @include tablet {
             @include primaryHeading2;
             padding: 0 3.6rem;
-            // margin: 5rem 0;
         }
 
         @include desktop {
@@ -71,10 +70,14 @@
 
     &__header {
         @include primaryHeading;
-        margin: 0.6rem 0;
+        margin-bottom: 1rem;
 
         @include tablet {
             @include secondaryHeading2;
+        }
+
+        @include desktop {
+            margin: 1rem 0;
         }
     }
 
@@ -91,27 +94,12 @@
     &__imgbox {
 
         @include tablet {
-            // max-width: 100%;
-            // max-height: 52vh;
-            // overflow: hidden;
-            // transform: rotateX(25deg);
-            // ^ cropping the top of the image
-
-            //previoous code adjusting the crop^
-            // height: 33rem;
-            // overflow: hidden;
             padding: 0 6.5rem;
             margin: 2rem 0;
         }
 
         @include desktop {
-            // max-width: 100%;
-            // max-height: 56vh;
-            // transform: rotateX(25deg);
-
-            //previous code adjusting the crop^^
-            // height: 45rem;
-            padding: 0 10rem;
+            margin: 2rem auto;
         }
     }
 
@@ -120,23 +108,14 @@
         aspect-ratio: 16/9;
 
         @include tablet {
-            // max-width: 85vw;
-            // padding: 0rem 4rem;
-        }
-
-        // @include desktop {
-        //     // padding: 0rem 10rem;
-        // }
-    }
-
-    &__quotebox {
-
-        @include tablet {
-            // margin: 0 2rem;
+            width: 56rem;
+            height: 30rem;
+            object-fit: cover;
         }
 
         @include desktop {
-            // margin: 0 3.5rem;
+            width: 85rem;
+            height: 46rem;
         }
     }
 
@@ -149,7 +128,7 @@
         @include tablet {
             @include primaryHeading;
             font-size: 2.1rem;
-            width: 100%;
+            width: 97%;
             padding: 0 6.3rem;
             margin: 1rem 0;
         }
@@ -184,13 +163,13 @@
         @include tablet {
             @include primaryHeading;
             font-weight: 600;
-            width: 81%;
+            width: 83%;
             margin: auto;
         }
 
         @include desktop {
-            width: fit-content;
-            margin: 0 10rem;
+            width: 80%;
+            margin: 0 auto;
         }
     }
 
@@ -202,14 +181,14 @@
         @include tablet {
             display: flex;
             flex-direction: row;
-            width: 81%;
+            gap: 2.4rem;
+            width: 83%;
             margin: auto;
         }
 
         @include desktop {
-            gap: 4.5rem;
             width: 80%;
-            margin: 0 10rem;
+            margin: 0 auto;
         }
     }
 

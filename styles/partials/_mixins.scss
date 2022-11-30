@@ -4,9 +4,9 @@
 // mixins
 
 @mixin defaultFont ($font-size: 1, $line-height) {
-    font-family: $type-face, sans-serif;  //variable
-    font-size: $font-size;  //case by case
-    line-height: $line-height; //case by case
+    font-family: $type-face, sans-serif; 
+    font-size: $font-size; 
+    line-height: $line-height; 
 }
 
 
