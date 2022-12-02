@@ -18,12 +18,14 @@
             flex-direction: row;
             align-items: flex-end;
             gap: 5rem;
-            padding: 3rem 3.6rem 0;
+            max-width: calc(100% - 7.2rem);
+            padding: 2.4rem 0 0;
+            margin: 0 auto;
         }
 
         @include desktop {
             gap: 8rem;
-            padding: 3rem 10rem 0;
+            max-width: 102rem;
         }
     }
 
