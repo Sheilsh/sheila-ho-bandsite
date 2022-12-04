@@ -7,12 +7,12 @@
 
 
 
-// all index.html styling
+// main index.html styling
 
 .hero {
     background-image: linear-gradient(
-        rgba(50, 50, 50, 0.5),
-        rgba(50, 50, 50, 0.5)), 
+        rgba(50, 50, 50, 0.4),
+        rgba(50, 50, 50, 0.4)), 
         url(../assets/images/hero-bio.jpg);
     background-position: center;
     background-size: cover;
@@ -45,11 +45,11 @@
     }
 
     &__header {
-        @include primaryHeading;
+        @include primary-heading;
         color: $primary-color3;
 
         @include tablet {
-            @include primaryHeading2;
+            @include primary-heading2;
         }
     }
 }
@@ -57,9 +57,7 @@
 .article {
 
     @include tablet {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+       @include flex-col-center;
     }
 
     &__wrapper {
@@ -85,11 +83,11 @@
     }
 
     &__header {
-        @include primaryHeading;
+        @include primary-heading;
         padding: 2.4rem 0 16px;
 
         @include tablet {
-            @include secondaryHeading2;
+            @include secondary-heading2;
             padding: 4.8rem 0 2.4rem;
         }
 
@@ -99,9 +97,7 @@
     }
 
     &__mainbox {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex-col-center;
     }
 
     &__image {
@@ -129,13 +125,13 @@
     }
 
     &__quote {
-        @include secondaryHeading;
+        @include secondary-heading;
         font-weight: 700;
         width: 101%;
         margin: 0.5rem 0;
         
         @include tablet {
-            @include primaryHeading;
+            @include primary-heading;
             font-size: 2.1rem;
             width: 79%;
             margin: 0 auto 1rem;
@@ -147,23 +143,23 @@
         }
 
         &--small {
-            @include secondaryHeading;
+            @include secondary-heading;
             font-weight: 600;
         }
     }
 
-    &__content-section {
+    &__contentbox {
         display: flex;
         flex-direction: column;
         gap: 2rem;
     }
 
     &__subheader {
-        @include secondaryHeading;
+        @include secondary-heading;
         font-weight: 500;
 
         @include tablet {
-            @include primaryHeading;
+            @include primary-heading;
             font-weight: 600;
             width: 83%;
             margin: auto;
@@ -196,11 +192,11 @@
     }
 
     &__description {
-        @include regularText;
+        @include regular-text;
         width: 95%;
 
         @include tablet {
-            @include regularText2;
+            @include regular-text2;
             inline-size: fit-content;
             width: 71%;
         }
@@ -216,13 +212,13 @@
     }
 
     &__header {
-        @include primaryHeading;
+        @include primary-heading;
         max-width: calc(100% - 3.2rem);
         padding: 2.4rem 0 1.6rem;
         margin: 0 auto;
 
         @include tablet {
-            @include secondaryHeading2;
+            @include secondary-heading2;
             max-width: calc(100% - 7.2rem);
             padding: 4.8rem 0 2.4rem;
             margin: 0 auto;
@@ -248,9 +244,7 @@
     }
 
     &__container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        @include flex-col-center;
         flex-wrap: wrap;
         gap: 2rem;
 
@@ -265,15 +259,6 @@
             }
 
         }
-
-        // &:hover img {
-        //     transition: all 0.2s;
-        //     filter: grayscale(100%);
-        // }
-
-        // &:hover img:hover {
-        //     filter: none;
-        // }
 
         @include tablet {
             display: grid;

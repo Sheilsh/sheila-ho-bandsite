@@ -45,30 +45,28 @@
     }
 
     &__header {
-        @include primaryHeading;
+        @include primary-heading;
         padding: 2.4rem 0 0;
 
         @include tablet {
-            @include secondaryHeading2;
+            @include secondary-heading2;
             font-weight: 600;
             padding: 4.8rem 0 2.4rem;
         }
     }
 
-    &__icon-container {
+    &__iconbox {
         display: flex;
         gap: 2.5rem;
     }
 
     &__icons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flex-col-center;
         width: 2.5rem;
         height: 2.5rem;
     }
 
-    &__contact-container {
+    &__contactbox {
         display: flex;
         flex-direction: column;
         gap: 2rem;
@@ -86,12 +84,12 @@
 
     &__name,
     &__title {
-        @include secondaryHeading;
+        @include secondary-heading;
         font-weight: 600;
     }
 
     &__address {
-        @include regularText;
+        @include regular-text;
         font-style: normal;
         margin: 1rem 0;
 
@@ -101,30 +99,31 @@
     }
 
     &__email, a {
-        @include regularText;
+        @include regular-text;
         color: $primary-color3;
         font-style: normal;
         margin: 1rem 0;
-
-        @include tablet
     }
 
-    &__copyright-logo{
+    &__copyright {
+    
+        &--logo {
         margin: 2rem 0 1rem;
 
-        @include tablet {
-            margin: 0;
-            position: absolute;
-            left: 80%;
-            top: 15%;
+            @include tablet {
+                margin: 0;
+                position: absolute;
+                left: 80%;
+                top: 15%;
+            }
         }
-    }
+             
+        &--text {
+            @include label-text;
 
-    &__copyright-text {
-        @include labelText;
-
-        @include tablet {
-            @include regularText2;
+            @include tablet {
+                @include regular-text2;
+            }
         }
     }
 }
