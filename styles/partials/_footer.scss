@@ -15,19 +15,20 @@
     &__container {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1.5rem;
         max-width: calc(100% - 3.2rem);
         padding-bottom: 1.6rem;
         margin: 0 auto;
 
         @include tablet {
-            gap: 3rem;
+            gap: 2rem;
             max-width: calc(100% - 7.2rem);
-            padding-bottom: 3.6rem;
+            padding-bottom: 2.6rem;
         }
 
         @include desktop {
             max-width: 102rem;
+            gap: 1.5rem;
         }
     }
 
@@ -58,6 +59,7 @@
     &__iconbox {
         display: flex;
         gap: 2.5rem;
+        padding-top: 1rem;
     }
 
     &__icons {
@@ -91,10 +93,11 @@
     &__address {
         @include regular-text;
         font-style: normal;
-        margin: 1rem 0;
+        padding: 1.5rem 0 1rem;
 
         @include tablet {
-            margin: 2rem 0;
+            @include regular-text2;
+            padding-top: 2rem;
         }
     }
 
@@ -103,12 +106,16 @@
         color: $primary-color3;
         font-style: normal;
         margin: 1rem 0;
+
+        @include tablet {
+            @include regular-text2;
+        }
     }
 
     &__copyright {
     
         &--logo {
-        margin: 2rem 0 1rem;
+            margin: 3rem 0 1rem;
 
             @include tablet {
                 margin: 0;
@@ -123,6 +130,7 @@
 
             @include tablet {
                 @include regular-text2;
+                padding-top: 2rem;
             }
         }
     }
