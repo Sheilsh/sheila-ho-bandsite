@@ -73,9 +73,6 @@ a {
   }
 }
 .nav__links {
-  font-family: "Avenir", sans-serif;
-  font-size: 1.4rem;
-  line-height: 2.2rem;
   list-style: none;
   display: flex;
   padding-top: 1rem 0;
@@ -89,10 +86,20 @@ a {
   width: 16rem;
   text-align: center;
 }
+.nav__items a {
+  font-family: "Avenir", sans-serif;
+  font-size: 1.4rem;
+  line-height: 2.2rem;
+  text-decoration: none;
+  color: #FFF;
+}
 .nav__items--active {
   font-weight: 500;
   border-bottom: 3px solid #FFF;
   padding-bottom: 1rem;
+}
+.nav__items--inactive a {
+  color: #E1E1E1;
 }
 .nav__items:hover, .nav__items:active {
   border-bottom: 3px solid #FFF;

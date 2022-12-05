@@ -36,7 +36,6 @@
     }
 
     &__links {
-        @include secondary-heading;
         list-style: none;
         display: flex;
         padding-top: 1rem 0;
@@ -50,11 +49,21 @@
     &__items {
         width: 16rem;
         text-align: center;
+
+        & a {
+            @include secondary-heading;
+            text-decoration: none;
+            color: $primary-color3;
+        }
     
         &--active {
             font-weight: 500;
             border-bottom: 3px solid $primary-color3;
             padding-bottom: 1rem;
+        }
+
+        &--inactive a {
+            color: $secondary-color2;
         }
 
         &:hover,
