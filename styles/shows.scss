@@ -1,0 +1,15 @@
+@use '../styles/partials/fonts' as *;
+@use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
+@use '../styles/partials/global' as *;
+@use '../styles/partials/nav' as *;
+@use '../styles/partials/footer' as *;
+
+.hero {
+    &--showimage {
+        background-image: linear-gradient(
+        rgba(50, 50, 50, 0.4),
+        rgba(50, 50, 50, 0.4)), 
+        url(../assets/images/hero-shows.jpg);
+    }
+}

@@ -10,47 +10,11 @@
 // main index.html styling
 
 .hero {
-    background-image: linear-gradient(
+    &--indeximage {
+        background-image: linear-gradient(
         rgba(50, 50, 50, 0.4),
         rgba(50, 50, 50, 0.4)), 
         url(../assets/images/hero-bio.jpg);
-    background-position: center;
-    background-size: cover;
-    min-width: 100%;
-    height: 20rem;
-
-    @include tablet {
-        height: 50rem;
-    }
-
-    @include desktop {
-        height: 65rem;
-    }
-
-    &__wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-        height: 100%;
-        margin: 0 auto;
-        max-width: calc(100% - 3.2rem);
-
-        @include tablet {
-            max-width: calc(100% - 7.2rem);
-        }
-        
-        @include desktop {
-            max-width: 102rem;
-        }
-    }
-
-    &__header {
-        @include primary-heading;
-        color: $primary-color3;
-
-        @include tablet {
-            @include primary-heading2;
-        }
     }
 }
 
@@ -270,4 +234,99 @@
     }
 }
 
+.comments {
+    margin-bottom: 2.4rem;
+
+    &__header {
+        @include primary-heading;
+        max-width: calc(100% - 3.2rem);
+        padding: 2.4rem 0 1.6rem;
+        margin: 0 auto;
+    }
+
+    &__wrapper {
+        width: 100%;
+        max-width: calc(100% - 3.2rem);
+        margin: 0 auto;
+    }
+
+    &__container {
+        display: flex;
+        // justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    &__imagebox {
+        width: fit-content;
+        padding: 3.4rem 0;
+        margin: 0;
+        
+    }
+
+    &__image {
+        width: 3.6rem;
+        height: 3.6rem;
+        object-fit: cover;
+        border-radius: 50%;
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    &__formcontain {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    &__formheader {
+        @include secondary-heading;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: $primary-color2;
+        padding: 0.4rem 0;
+    }
+
+    & input, textarea {
+        width: 23rem;
+        padding: 1.2rem;
+        border: 1px solid $secondary-color2;
+        border-radius: 4px;
+        background-color: $secondary-color3;
+
+        &::placeholder {
+            @include secondary-heading;
+            color: $primary-color1;
+        }
+    }
+
+    & textarea { 
+        height: 10rem;
+        resize: none;
+    }
+
+    & button {
+        @include secondary-heading;
+        font-weight: 600;
+        text-transform: uppercase;
+        background-color: $primary-color1;
+        color: $secondary-color3;
+        border: 1px solid $primary-color1;
+        border-radius: 4px;
+        padding: 1.2rem;
+    }
+
+    &__linebreak {
+        color: $secondary-color2;
+        margin: 2.4rem 0;
+    }
+
+
+
+
+}
 
