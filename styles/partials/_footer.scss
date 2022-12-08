@@ -12,8 +12,7 @@
     }
 
     &__container {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
         gap: 1.5rem;
         max-width: calc(100% - 3.2rem);
         padding-bottom: 1.6rem;
@@ -68,8 +67,7 @@
     }
 
     &__contactbox {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
         gap: 2rem;
 
         @include tablet {

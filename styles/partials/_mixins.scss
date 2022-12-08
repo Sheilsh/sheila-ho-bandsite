@@ -62,6 +62,11 @@
     align-items: center;
 }
 
+@mixin flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
 // media queries
 
 @mixin tablet {

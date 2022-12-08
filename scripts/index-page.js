@@ -20,35 +20,49 @@ let listOfUsers = [
 
 
 for (let i = 0; i < listOfUsers.length; i++) {
-    let comSection = document.querySelector(".comments");
+    let comSection = document.querySelector(".comments__wrapper");
 
     let userCards = document.createElement("div");
-    userCards.classList.add("comments__usercard");
+    userCards.classList.add("comments__usercards");
     comSection.appendChild(userCards);
+
+    let userImgBox = document.createElement("div");
+    userImgBox.classList.add("comments__userimgbox");
+    userCards.appendChild(userImgBox);
     
     let userImage = document.createElement("img");
     userImage.classList.add("comments__userimage");
-    userImage.setAttribute("src", "#");
+    userImage.setAttribute("src", " ");
     // userImage.setAttribute("alt", "user image")
-    userCards.appendChild(userImage);
+    userImgBox.appendChild(userImage);
+
+    let userContent = document.createElement("div");
+    userContent.classList.add("comments__userinfo");
+    userCards.appendChild(userContent);
+
+    let userInfo = document.createElement("div");
+    userInfo.classList.add("comments__usercontent");
+    userContent.appendChild(userInfo);
+
   
     let userName = document.createElement("p");
     userName.classList.add("comments__username");
     userName.innerHTML = listOfUsers[i].name;
-    userCards.appendChild(userName);
+    userInfo.appendChild(userName);
 
-    let userDate = document.createElement("p");
+    let userDate = document.createElement("time");
     userDate.classList.add("comments__date");
+    userDate.setAttribute("datetime", " ")
     userDate.innerHTML = listOfUsers[i].date;
-    userCards.appendChild(userDate);
+    userInfo.appendChild(userDate);
 
     let userComment = document.createElement("p");
-    userComment.classList.add("comments__date");
+    userComment.classList.add("comments__msg");
     userComment.innerHTML = listOfUsers[i].comment;
-    userCards.appendChild(userComment);
+    userContent.appendChild(userComment);
 
     let lineBreak = document.createElement("hr");
     lineBreak.classList.add("comments__linebreak")
-    userCards.appendChild(lineBreak);
+    comSection.appendChild(lineBreak);
   
   }

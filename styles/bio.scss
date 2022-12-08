@@ -18,6 +18,8 @@
     }
 }
 
+// --- article section ---
+
 .article {
 
     @include tablet {
@@ -113,8 +115,7 @@
     }
 
     &__contentbox {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
         gap: 2rem;
     }
 
@@ -136,8 +137,7 @@
     }
 
     &__subbox {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
         gap: 2rem;
 
         @include tablet {
@@ -166,6 +166,8 @@
         }
     }
 }
+
+// --- gallery section ---
 
 .gallery {
     background-color: $secondary-color3;
@@ -234,57 +236,94 @@
     }
 }
 
+// --- comments and form section ---
+
 .comments {
-    margin-bottom: 2.4rem;
 
     &__header {
         @include primary-heading;
         max-width: calc(100% - 3.2rem);
         padding: 2.4rem 0 1.6rem;
         margin: 0 auto;
+
+        @include tablet {
+            @include secondary-heading2;
+            max-width: calc(100% - 7.2rem);
+        }
+
+        @include desktop {
+            max-width: 102rem;
+        }
     }
 
     &__wrapper {
         width: 100%;
         max-width: calc(100% - 3.2rem);
         margin: 0 auto;
+
+        @include tablet {
+            max-width: calc(100% - 7.2rem);
+        }
+
+        @include desktop {
+            max-width: 102rem;
+        }
     }
 
-    &__container {
-        display: flex;
-        // justify-content: center;
-        align-items: flex-start;
-        gap: 1rem;
+    &__submission, &__usercards {
         width: 100%;
+        display: flex;
+        gap: 1rem;
+
+        @include tablet {
+            justify-content: center;
+            gap: 2rem;
+        }
     }
 
     &__imagebox {
-        width: fit-content;
-        padding: 3.4rem 0;
-        margin: 0;
-        
+        max-width: 100%;
     }
 
     &__image {
+        background-image: url(../assets/images/Mohan-muruge.jpg);
+        background-position: 25% 50%;
+        background-size: cover;
         width: 3.6rem;
         height: 3.6rem;
-        object-fit: cover;
         border-radius: 50%;
+        margin: 3.4rem 0;
+
+        @include tablet {
+            width: 4.8rem;
+            height: 4.8rem;
+        }
+    }
+
+    &__formbox {
+        width: 100%;
+        resize: vertical;
+
+        @include tablet {
+            width: fit-content;
+        }
     }
 
     &__form {
-        display: flex;
-        flex-direction: column;
-        gap: 2rem;
+        @include flex-col;
+        gap: 1rem;
+
+        @include tablet {
+            align-items: flex-end;
+        }
     }
 
     &__formcontain {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
     }
     
     &__formheader {
-        @include secondary-heading;
+        @include label-text2;
         text-transform: uppercase;
         font-weight: 500;
         color: $primary-color2;
@@ -292,15 +331,34 @@
     }
 
     & input, textarea {
-        width: 23rem;
+        @include regular-text2;
         padding: 1.2rem;
         border: 1px solid $secondary-color2;
         border-radius: 4px;
         background-color: $secondary-color3;
 
         &::placeholder {
-            @include secondary-heading;
+            @include regular-text2;
             color: $primary-color1;
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid $primary-color1;
+        }
+
+        &:required:focus:invalid {
+            outline: none;
+            border: 1px solid #D22D2D;
+        }
+
+        @include tablet {
+            width: 51rem;
+            padding: 1.6rem;
+        }
+
+        @include desktop {
+            width: 43rem;
         }
     }
 
@@ -313,20 +371,86 @@
         @include secondary-heading;
         font-weight: 600;
         text-transform: uppercase;
-        background-color: $primary-color1;
         color: $secondary-color3;
+        background-color: $primary-color1;
         border: 1px solid $primary-color1;
         border-radius: 4px;
         padding: 1.2rem;
+        margin: 0.5rem 0 0;
+
+        @include tablet {
+            @include regular-text2;
+            width: 15rem;
+            padding: 1rem 1.6rem;
+        }
     }
 
     &__linebreak {
-        color: $secondary-color2;
-        margin: 2.4rem 0;
+        background-color: $secondary-color2;
+        height: 0.1rem;
+        border: none;
+        margin: 1.6rem 0;
+
+        @include tablet {
+            margin: 2.4rem auto;
+            width: 58rem;
+        }
+
+        @include desktop {
+            width: 50rem;
+        }
     }
 
+    // &__usercards {
+    //     display: flex;
+    //     gap: 1rem;
 
+    //     @include tablet {
+    //         justify-content: center;
+    //         gap: 2rem;
+    //     }
+    // }
+    // shares the same code with submissions
 
+    &__userimage {
+        width: 3.6rem;
+        height: 3.6rem;
+        border-radius: 50%;
+        background-color: $secondary-color2;
 
+        @include tablet {
+            width: 4.8rem;
+            height: 4.8rem;
+        }
+    }
+
+    &__userinfo {
+        @include regular-text;
+        @include flex-col;
+        width: 100%;
+
+        @include tablet {
+            @include regular-text2;
+            width: 51rem;
+        }
+
+        @include desktop {
+            width: 43rem;
+        }
+    }
+
+    &__usercontent {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+    }
+
+    &__username {
+        font-weight: 700;
+    }
+
+    &__date {
+        color: $primary-color2;
+    }
 }
 
