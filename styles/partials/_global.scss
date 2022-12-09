@@ -39,20 +39,21 @@ a {
     }
 
     &__wrapper {
-        position: relative;
+        // position: relative;
         display: flex;
         align-items: center;
-        height: 100%;
-        margin: 0 auto;
-        max-width: calc(100% - 3.2rem);
+        @include wrapper-props;
+        // height: 100%;
+        // margin: 0 auto;
+        // max-width: calc(100% - 3.2rem);
 
-        @include tablet {
-            max-width: calc(100% - 7.2rem);
-        }
+        // @include tablet {
+        //     max-width: calc(100% - 7.2rem);
+        // }
         
-        @include desktop {
-            max-width: 102rem;
-        }
+        // @include desktop {
+        //     max-width: 102rem;
+        // }
     }
 
     &__header {

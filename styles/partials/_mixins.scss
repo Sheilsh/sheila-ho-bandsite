@@ -67,6 +67,41 @@
     flex-direction: column;
 }
 
+// wrapper & container mixin 
+
+@mixin wrapper-props {
+    width: 100%;
+    height: 100%;
+    max-width: calc(100% - 3.2rem);
+    margin: 0 auto;
+
+    @include tablet {
+        max-width: calc(100% - 7.2rem);
+    }
+
+    @include desktop {
+        max-width: 102rem;
+    }
+}
+
+// headers 
+
+@mixin header-props {
+    @include primary-heading;
+    max-width: calc(100% - 3.2rem);
+    padding: 2.4rem 0 1.6rem;
+    margin: 0 auto;
+
+    @include tablet {
+        @include secondary-heading2;
+        max-width: calc(100% - 7.2rem);
+    }
+
+    @include desktop {
+        max-width: 102rem;
+    }
+}
+
 // media queries
 
 @mixin tablet {

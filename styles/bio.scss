@@ -27,17 +27,18 @@
     }
 
     &__wrapper {
-        width: 100%;
-        max-width: calc(100% - 3.2rem);
-        margin: 0 auto;
+        @include wrapper-props;
+        // width: 100%;
+        // max-width: calc(100% - 3.2rem);
+        // margin: 0 auto;
 
-        @include tablet {
-            max-width: calc(100% - 7.2rem);
-        }
+        // @include tablet {
+        //     max-width: calc(100% - 7.2rem);
+        // }
 
-        @include desktop {
-            max-width: 102rem;
-        }
+        // @include desktop {
+        //     max-width: 102rem;
+        // }
     }
 
     &__container {
@@ -178,35 +179,37 @@
     }
 
     &__header {
-        @include primary-heading;
-        max-width: calc(100% - 3.2rem);
-        padding: 2.4rem 0 1.6rem;
-        margin: 0 auto;
+        @include header-props;
+        // @include primary-heading;
+        // max-width: calc(100% - 3.2rem);
+        // padding: 2.4rem 0 1.6rem;
+        // margin: 0 auto;
 
-        @include tablet {
-            @include secondary-heading2;
-            max-width: calc(100% - 7.2rem);
-            padding: 4.8rem 0 2.4rem;
-            margin: 0 auto;
-        }
+        // @include tablet {
+        //     @include secondary-heading2;
+        //     max-width: calc(100% - 7.2rem);
+        //     padding: 4.8rem 0 2.4rem;
+        //     margin: 0 auto;
+        // }
 
-        @include desktop {
-            max-width: 102rem;
-        }
+        // @include desktop {
+        //     max-width: 102rem;
+        // }
     }
 
     &__wrapper {
-        width: 100%;
-        max-width: calc(100% - 3.2rem);
-        margin: 0 auto;
+        @include wrapper-props;
+        // width: 100%;
+        // max-width: calc(100% - 3.2rem);
+        // margin: 0 auto;
 
-        @include tablet {
-            max-width: calc(100% - 7.2rem);
-        }
+        // @include tablet {
+        //     max-width: calc(100% - 7.2rem);
+        // }
 
-        @include desktop {
-            max-width: 102rem;
-        }
+        // @include desktop {
+        //     max-width: 102rem;
+        // }
     }
 
     &__container {
@@ -241,33 +244,35 @@
 .comments {
 
     &__header {
-        @include primary-heading;
-        max-width: calc(100% - 3.2rem);
-        padding: 2.4rem 0 1.6rem;
-        margin: 0 auto;
+        @include header-props;
+        // @include primary-heading;
+        // max-width: calc(100% - 3.2rem);
+        // padding: 2.4rem 0 1.6rem;
+        // margin: 0 auto;
 
-        @include tablet {
-            @include secondary-heading2;
-            max-width: calc(100% - 7.2rem);
-        }
+        // @include tablet {
+        //     @include secondary-heading2;
+        //     max-width: calc(100% - 7.2rem);
+        // }
 
-        @include desktop {
-            max-width: 102rem;
-        }
+        // @include desktop {
+        //     max-width: 102rem;
+        // }
     }
 
     &__wrapper {
-        width: 100%;
-        max-width: calc(100% - 3.2rem);
-        margin: 0 auto;
+        @include wrapper-props;
+        // width: 100%;
+        // max-width: calc(100% - 3.2rem);
+        // margin: 0 auto;
 
-        @include tablet {
-            max-width: calc(100% - 7.2rem);
-        }
+        // @include tablet {
+        //     max-width: calc(100% - 7.2rem);
+        // }
 
-        @include desktop {
-            max-width: 102rem;
-        }
+        // @include desktop {
+        //     max-width: 102rem;
+        // }
     }
 
     &__submission, &__usercards {
