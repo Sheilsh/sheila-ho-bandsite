@@ -11,7 +11,14 @@
         rgba(50, 50, 50, 0.4),
         rgba(50, 50, 50, 0.4)), 
         url(../assets/images/hero-shows.jpg);
-        height: 35rem;
+        background-position: 0%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 31rem;
+
+        @include tablet {
+            height: 45rem;
+        }
     }
 
     &__container {
@@ -21,11 +28,17 @@
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
+        gap: 1rem;
     }
 
     &__title {
         @include regular-text;
         color: $primary-color3;
+
+        @include tablet {
+            @include primary-heading;
+            font-weight: 700;
+        }
     }
 
     &__header {
@@ -36,7 +49,14 @@
 
     &__song {
         // width: 100%;
-        margin: 2rem 0;
+        margin: 1rem 0;
+    }
+
+    & iframe {
+
+        @include tablet {
+            width: 40rem;
+        }
     }
 }
 
@@ -59,10 +79,27 @@
         }
     }
 
-    &__showcards {
+    &__cards {
         @include wrapper-props;
         @include flex-col;
-        gap: 1rem;
+        gap: 1.5rem;
+
+        @include tablet {
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: flex-start;
+            // gap: 8rem;
+            // padding: 2.4rem 0;
+    
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            padding: 2.4rem 0;
+
+            &:nth-child(n + 2) .shows__info .shows__titles {
+                display: none;
+            }
+        }
     }
 
     &__titles {
@@ -70,7 +107,15 @@
         text-transform: uppercase;
         font-weight: 600;
         color: $primary-color2;
+
+        @include tablet {
+
+            // &:nth-child(2) {
+            //     font-size: 20rem;
+            // }
+        }
     }
+
 
     &__date {
         @include regular-text;
@@ -91,6 +136,11 @@
         border-radius: 4px;
         padding: 1.2rem;
         margin: 0.5rem 0 0;
+
+        @include tablet {
+            // width: 80%;
+            padding: 0.5rem 1.2rem;
+        }
     }
 
     &__linebreak {
@@ -98,6 +148,10 @@
         height: 0.1rem;
         border: none;
         margin: 1.6rem 0;
+
+        @include tablet {
+            margin: 0 1.8rem;
+        }
     }
 
 

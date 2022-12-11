@@ -87,7 +87,7 @@
                     <!-- <img class="comments__image" src="./assets/images/Mohan-muruge.jpg" alt="user image"> -->
                 </div>
                 <div class="comments__formbox">
-                    <form action="/#" class="comments__form">
+                    <form action="/addcomment" class="comments__form">
                         <div class="comments__formcontain">
                             <label class="comments__formheader" for="name">Name</label>
                             <input type="text" name="name" id="name" placeholder="Enter your name" required>
@@ -96,11 +96,12 @@
                             <label class="comments__formheader" for="comment">Comment</label>
                             <textarea name="comment" id="comment" cols="30" rows="8" placeholder="Add a new comment" required></textarea>
                         </div>
-                        <button class="comment__button">Comment</button>
+                        <button class="comment__button" type="submit">Comment</button>
                     </form>
                 </div>
             </div>
             <hr class="comments__linebreak">
+            <div class="comments__container"></div>
         </div>
     </section>
         <!-- footer section -->

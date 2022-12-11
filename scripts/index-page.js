@@ -1,6 +1,8 @@
 // ----- Form Comment Display -----
 
-let listOfUsers = [
+// array of users and comments
+
+let listOfComments = [
     { 
         name: "Connor Walton", 
         date: "02/17/2021", 
@@ -18,51 +20,99 @@ let listOfUsers = [
     },
 ];
 
+// funtion for elements based on list of users array
 
-for (let i = 0; i < listOfUsers.length; i++) {
-    let comSection = document.querySelector(".comments__wrapper");
+function commentCards(listOfComments) { 
 
-    let userCards = document.createElement("div");
-    userCards.classList.add("comments__usercards");
-    comSection.appendChild(userCards);
+    // user card element
+    let userCard = document.createElement("article");
+    userCard.classList.add("comments__usercard");
 
+    //user imgbox with img inside
     let userImgBox = document.createElement("div");
     userImgBox.classList.add("comments__userimgbox");
-    userCards.appendChild(userImgBox);
     
     let userImage = document.createElement("img");
     userImage.classList.add("comments__userimage");
     userImage.setAttribute("src", " ");
-    // userImage.setAttribute("alt", "user image")
-    userImgBox.appendChild(userImage);
+    // userImage.setAttribute("alt", "user image");
 
+    //user info box 
     let userContent = document.createElement("div");
-    userContent.classList.add("comments__userinfo");
-    userCards.appendChild(userContent);
+    userContent.classList.add("comments__usercontent");
 
+    // user content box
     let userInfo = document.createElement("div");
-    userInfo.classList.add("comments__usercontent");
-    userContent.appendChild(userInfo);
-
+    userInfo.classList.add("comments__userinfo");
   
+    // user name
     let userName = document.createElement("p");
     userName.classList.add("comments__username");
-    userName.innerHTML = listOfUsers[i].name;
-    userInfo.appendChild(userName);
+    userName.innerHTML = listOfComments.name;
 
-    let userDate = document.createElement("time");
+    // user time
+    let userDate = document.createElement("p");
     userDate.classList.add("comments__date");
-    userDate.setAttribute("datetime", " ")
-    userDate.innerHTML = listOfUsers[i].date;
-    userInfo.appendChild(userDate);
+    userDate.innerHTML = listOfComments.date;
 
+    // user comment
     let userComment = document.createElement("p");
     userComment.classList.add("comments__msg");
-    userComment.innerHTML = listOfUsers[i].comment;
-    userContent.appendChild(userComment);
+    userComment.innerHTML = listOfComments.comment;
 
-    let lineBreak = document.createElement("hr");
-    lineBreak.classList.add("comments__linebreak")
-    comSection.appendChild(lineBreak);
-  
-  }
+    // appends
+    userCard.append(userImgBox, userContent);
+    userImgBox.appendChild(userImage);
+    userContent.append(userInfo,userComment);
+    userInfo.append(userName,userDate);
+
+    return userCard;
+}
+
+// function for rendering users to the html
+function renderUsersComments() {
+    const commentSectionEl = document.querySelector(".comments__container");
+    
+    // commentSectionEl.value = "";
+
+    for (let i = 0; i < listOfComments.length; i++) {
+        commentSectionEl.appendChild(commentCards(listOfComments[i]));
+       
+        let lineBreak = document.createElement("hr");
+        lineBreak.classList.add("comments__linebreak")
+        commentSectionEl.appendChild(lineBreak);
+    }
+}
+
+renderUsersComments();
+
+// form submit data
+const formEl = document.querySelector(".comments__form");
+const formName = document.querySelector("#name");
+const formDate = document.querySelector(".comments__date");
+const formComment = document.querySelector("#comment");
+
+
+function displayComments(event) {
+    event.preventDefault();
+
+    const currentDate = new Date();
+    let yyyy = currentDate.getFullYear();
+    let mm = currentDate.getMonth() + 1;
+    let dd = currentDate.getDate();
+    let currentTimeStamp = `${mm}/${dd}/${yyyy}`;
+
+    const newComment = {
+        name: event.target.name.value,
+        date: currentTimeStamp,
+        comment: event.target.comment.value,
+    };
+
+    
+    listOfComments.unshift(newComment);
+    document.querySelector(".comments__container").innerHTML = "",
+    renderUsersComments();
+    event.target.reset();
+}
+
+formEl.addEventListener("submit", displayComments);

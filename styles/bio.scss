@@ -275,7 +275,7 @@
         // }
     }
 
-    &__submission, &__usercards {
+    &__submission, &__usercard {
         width: 100%;
         display: flex;
         gap: 1rem;
@@ -429,7 +429,7 @@
         }
     }
 
-    &__userinfo {
+    &__usercontent {
         @include regular-text;
         @include flex-col;
         width: 100%;
@@ -444,7 +444,7 @@
         }
     }
 
-    &__usercontent {
+    &__userinfo {
         display: flex;
         justify-content: space-between;
         padding-bottom: 1rem;

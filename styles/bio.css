@@ -621,13 +621,13 @@ a {
     max-width: 102rem;
   }
 }
-.comments__submission, .comments__usercards {
+.comments__submission, .comments__usercard {
   width: 100%;
   display: flex;
   gap: 1rem;
 }
 @media (min-width: 768px) {
-  .comments__submission, .comments__usercards {
+  .comments__submission, .comments__usercard {
     justify-content: center;
     gap: 2rem;
   }
@@ -785,7 +785,7 @@ a {
     height: 4.8rem;
   }
 }
-.comments__userinfo {
+.comments__usercontent {
   font-family: "Avenir", sans-serif;
   font-size: 1.3rem;
   line-height: 1.8rem;
@@ -794,7 +794,7 @@ a {
   width: 100%;
 }
 @media (min-width: 768px) {
-  .comments__userinfo {
+  .comments__usercontent {
     font-family: "Avenir", sans-serif;
     font-size: 1.4rem;
     line-height: 2.2rem;
@@ -802,11 +802,11 @@ a {
   }
 }
 @media (min-width: 1280px) {
-  .comments__userinfo {
+  .comments__usercontent {
     width: 43rem;
   }
 }
-.comments__usercontent {
+.comments__userinfo {
   display: flex;
   justify-content: space-between;
   padding-bottom: 1rem;
