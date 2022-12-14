@@ -632,6 +632,9 @@ a {
     gap: 2rem;
   }
 }
+.comments__container {
+  overflow-wrap: break-word;
+}
 .comments__imagebox {
   max-width: 100%;
 }

@@ -341,7 +341,13 @@ a {
 }
 @media (min-width: 768px) {
   .hero--showimage {
-    height: 45rem;
+    height: 50rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero--showimage {
+    background-position: 0 27%;
+    height: 60rem;
   }
 }
 .hero__container {
@@ -352,6 +358,12 @@ a {
   justify-content: center;
   align-items: flex-start;
   gap: 1rem;
+}
+@media (min-width: 1280px) {
+  .hero__container {
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .hero__title {
   font-family: "Avenir", sans-serif;
@@ -373,14 +385,34 @@ a {
 .hero__song {
   margin: 1rem 0;
 }
+.hero iframe {
+  border-radius: 4px;
+}
 @media (min-width: 768px) {
   .hero iframe {
     width: 40rem;
   }
 }
+@media (min-width: 1280px) {
+  .hero iframe {
+    font-family: "Avenir", sans-serif;
+    font-size: 1.2rem;
+    line-height: 2rem;
+    width: 41rem;
+    height: 15rem;
+  }
+}
 
 .shows {
   margin: 1rem 0;
+}
+@media (min-width: 1280px) {
+  .shows {
+    display: flex;
+    justify-content: center;
+    gap: 10rem;
+    margin: 4rem 0 1rem;
+  }
 }
 .shows__header {
   font-family: "Avenir", sans-serif;
@@ -401,6 +433,12 @@ a {
 @media (min-width: 1280px) {
   .shows__header {
     max-width: 102rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__header {
+    padding: 0;
+    margin: 0;
   }
 }
 .shows__container {
@@ -435,10 +473,18 @@ a {
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 2.4rem 0;
+    padding: 1.4rem 0;
   }
   .shows__cards:nth-child(n+2) .shows__info .shows__titles {
     display: none;
+  }
+  .shows__cards:first-child .shows__button {
+    margin-top: 3.4rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows__cards {
+    gap: 8rem;
   }
 }
 .shows__titles {
@@ -448,6 +494,11 @@ a {
   text-transform: uppercase;
   font-weight: 600;
   color: #AFAFAF;
+}
+@media (min-width: 768px) {
+  .shows__titles {
+    margin-bottom: 2.4rem;
+  }
 }
 .shows__date {
   font-family: "Avenir", sans-serif;
@@ -464,7 +515,7 @@ a {
   font-family: "Avenir", sans-serif;
   font-size: 1.4rem;
   line-height: 2.2rem;
-  font-weight: 600;
+  font-weight: 500;
   text-transform: uppercase;
   color: #FAFAFA;
   background-color: #323232;
@@ -475,7 +526,15 @@ a {
 }
 @media (min-width: 768px) {
   .shows__button {
+    font-family: "Avenir", sans-serif;
+    font-size: 1.4rem;
+    line-height: 2.2rem;
     padding: 0.5rem 1.2rem;
+  }
+}
+@media (min-width: 768px) {
+  .shows__button {
+    padding: 0.5rem 2.2rem;
   }
 }
 .shows__linebreak {

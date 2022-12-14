@@ -286,6 +286,10 @@
         }
     }
 
+    &__container {
+        overflow-wrap: break-word;
+    }
+
     &__imagebox {
         max-width: 100%;
     }
