@@ -34,14 +34,14 @@ let listOfShows = [
 ];
 
 function showsOption(listOfShows) {
-    let showCards = document.createElement("article");
-    showCards.classList.add("shows__cards");
+    let showCard = document.createElement("article");
+    showCard.classList.add("shows__card");
 
     let showDateBox = document.createElement("div");
     showDateBox.classList.add("shows__info")
     
     let showDateTitle = document.createElement("p");
-    showDateTitle.classList.add("shows__titles");
+    showDateTitle.classList.add("shows__title");
     showDateTitle.innerHTML = "Date";
     
     let showDate = document.createElement("p");
@@ -52,7 +52,7 @@ function showsOption(listOfShows) {
     showVenueBox.classList.add("shows__info");
 
     let showVenueTitle = document.createElement("p");
-    showVenueTitle.classList.add("shows__titles");
+    showVenueTitle.classList.add("shows__title");
     showVenueTitle.innerHTML = "Venue";
    
     let showVenue = document.createElement("p");
@@ -63,7 +63,7 @@ function showsOption(listOfShows) {
     showLocationBox.classList.add("shows__info");
 
     let showLocationTitle = document.createElement("p");
-    showLocationTitle.classList.add("shows__titles");
+    showLocationTitle.classList.add("shows__title");
     showLocationTitle.innerHTML = "Location";
 
     let showLocation = document.createElement("p");
@@ -75,13 +75,13 @@ function showsOption(listOfShows) {
     showButton.innerText = "Buy Tickets";
 
  
-    showCards.append(showDateBox, showVenueBox, showLocationBox, showButton);
+    showCard.append(showDateBox, showVenueBox, showLocationBox, showButton);
 
     showDateBox.append(showDateTitle, showDate);
     showVenueBox.append(showVenueTitle, showVenue);
     showLocationBox.append(showLocationTitle, showLocation);
 
-    return showCards;
+    return showCard;
 }
 
 function renderShowCards() {
@@ -100,67 +100,25 @@ function renderShowCards() {
 }
 renderShowCards();
 
-// const showButton = document.querySelector(".shows__button");
-// showButton.addEventListener('click', (event) => {
-//     event.preventDefault();
 
-// })
+// button - selected state
+let showsContain = document.querySelector(".shows__container");
+let showsRow = showsContain.getElementsByClassName("shows__card");
 
+for (let i = 0; i < showsRow.length; i++) {
+  showsRow[i].addEventListener("click", function() {
+    let selected = document.getElementsByClassName("active");
 
+    // If there's no active class
+    if (selected.length > 0) {
+      selected[0].className = selected[0].className.replace(" active", "");
+    }
+    this.className += " active";
+  });
+}
 
-
-
-// for loop 
-
-// for (let i = 0; i < listOfShows.length; i++) {
-//     let showSection = document.querySelector(".shows__wrapper");
-
-//     let showCards = document.createElement("div");
-//     showCards.classList.add("shows__showcards");
-//     showSection.appendChild(showCards);
-
-//     // let showInfo = document.createElement("div");
-//     // showInfo.classList.add("shows__showinfo");
-//     // showCards.appendChild(showInfo);
-
-//     let showDateTitle = document.createElement("p");
-//     showDateTitle.classList.add("shows__titles");
-//     showDateTitle.innerHTML = "Date";
-//     showCards.appendChild(showDateTitle);
-
-//     let showDate = document.createElement("time");
-//     showDate.classList.add("shows__date");
-//     showDate.setAttribute("datetime", " ")
-//     showDate.innerHTML = listOfShows[i].date;
-//     showCards.appendChild(showDate);
-
-//     let showVenueTitle = document.createElement("p");
-//     showVenueTitle.classList.add("shows__titles");
-//     showVenueTitle.innerHTML = "Venue";
-//     showCards.appendChild(showVenueTitle);
-  
-//     let showVenue = document.createElement("p");
-//     showVenue.classList.add("shows__venue");
-//     showVenue.innerHTML = listOfShows[i].venue;
-//     showCards.appendChild(showVenue);
-
-//     let showLocationTitle = document.createElement("p");
-//     showLocationTitle.classList.add("shows__titles");
-//     showLocationTitle.innerHTML = "Location";
-//     showCards.appendChild(showLocationTitle);
-
-//     let showLocation = document.createElement("p");
-//     showLocation.classList.add("shows__location");
-//     showLocation.innerHTML = listOfShows[i].location;
-//     showCards.appendChild(showLocation);
-
-//     let showButton = document.createElement("button");
-//     showButton.classList.add("shows__button");
-//     showButton.innerText = "Buy Tickets";
-//     showCards.appendChild(showButton);
-
-//     let lineBreak = document.createElement("hr");
-//     lineBreak.classList.add("shows__linebreak")
-//     showSection.appendChild(lineBreak);
-
-// }
+let showsHeaders = document.querySelector(".shows__title");
+console.log(showsHeaders);
+showsHeaders.addEventListener("click", function() {
+    showsHeaders.classList.toggle(".shows__titles--selected");
+});

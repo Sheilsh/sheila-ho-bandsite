@@ -245,6 +245,10 @@
 
     &__header {
         @include header-props;
+
+        @include tablet {
+            padding: 4.8rem 0 3.6rem;
+        }
         // @include primary-heading;
         // max-width: calc(100% - 3.2rem);
         // padding: 2.4rem 0 1.6rem;

@@ -8,8 +8,8 @@
 .hero {
     &--showimage {
         background-image: linear-gradient(
-        rgba(50, 50, 50, 0.4),
-        rgba(50, 50, 50, 0.4)), 
+        rgba(50, 50, 50, 0.5),
+        rgba(50, 50, 50, 0.5)), 
         url(../assets/images/hero-shows.jpg);
         background-position: 0%;
         background-size: cover;
@@ -17,12 +17,12 @@
         height: 31rem;
 
         @include tablet {
-            height: 50rem;
+            height: 47rem;
         }
 
         @include desktop {
             background-position: 0 27%;
-            height: 60rem;
+            height: 65rem;
         }
     }
 
@@ -35,19 +35,29 @@
         align-items: flex-start;
         gap: 1rem;
 
+        @include tablet {
+            gap: 3rem;
+        }
+
         @include desktop {
             flex-direction: row;
-            align-items: center
+            align-items: center;
+            gap: 5rem;
         }
     }
 
     &__title {
         @include regular-text;
         color: $primary-color3;
+        padding: 1rem 0;
 
         @include tablet {
             @include primary-heading;
-            font-weight: 700;
+            font-weight: 500;
+        }
+
+        @include desktop {
+            padding: 2rem 0;
         }
     }
 
@@ -55,11 +65,19 @@
 
         &--showheader {
             width: 80%;
+
+            @include desktop {
+                width: 90%;
+            }
         }
     }
 
     &__song {
         margin: 1rem 0;
+
+        @include desktop {
+            transform: translate(33px, 35px);
+        }
     }
 
     & iframe {
@@ -67,15 +85,18 @@
 
         @include tablet {
             width: 40rem;
+            height: 14rem;
         }
 
         @include desktop {
             @include label-text2;
-            width: 41rem;
+            width: 44rem;
             height: 15rem;
         }
     }
 }
+
+// ---------- Show Section ---------------
 
 .shows {
     margin: 1rem 0;
@@ -84,20 +105,49 @@
         display: flex;
         justify-content: center;
         gap: 10rem;
-        margin: 4rem 0 1rem;
+        // margin: 4rem 0 1rem;
     }
 
     &__header {
        @include header-props;
 
+       @include tablet {
+            max-width: calc(100% - 3.2rem);
+            padding: 4.8rem 1.8rem 3.6rem;
+       }
+
        @include desktop {
-            padding: 0;
+            max-width: 102rem;
             margin: 0;
        }
     }
 
-    &__wrapper {
-    //    @include wrapper-props;
+    // &__wrapper {
+       
+    // }
+
+    &__titles--hidden {
+        display: none;
+
+        @include tablet {
+            display: contents;
+            @include label-text2;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $primary-color2;
+            max-width: calc(100% - 3.2rem);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1.5rem;
+            padding: 0 1.8rem;
+        }
+
+        @include desktop {
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2.4rem;
+            padding: 6.8rem 0 1rem;
+        }
     }
 
     &__container {
@@ -108,59 +158,67 @@
         }
     }
 
-    &__cards {
-        @include wrapper-props;
+    &__card {
         @include flex-col;
         gap: 1.5rem;
+        padding: 1.6rem;
 
         @include tablet {
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: flex-start;
-            // gap: 8rem;
-            // padding: 2.4rem 0;
-    
+            @include wrapper-small;
             display: grid;
             align-items: center;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            padding: 1.4rem 0;
+            padding: 2.4rem 1.8rem;
 
-            &:nth-child(n + 2) .shows__info .shows__titles {
-                display: none;
-            }
+            // &:nth-child(n + 2) .shows__info .shows__title {
+            //     display: none;
+            // }
 
-            &:first-child .shows__button {
-                margin-top: 3.4rem;
-            }
+            // &:first-child .shows__info .shows__title {
+            //     padding-bottom: 3.6rem;
+            // }
+
+            // &:first-child .shows__button {
+            //     margin: 4.6rem 0 0;
+            // }
         }
 
         @include desktop {
-            gap: 8rem;
+            max-width: 102rem;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 2.4rem;
+        }
+
+        &:hover {
+            background-color: $secondary-color3;
         }
     }
 
-    &__titles {
+    & .active {
+        background-color: $secondary-color2;
+    }
+
+    &__title {
         @include label-text;
         text-transform: uppercase;
         font-weight: 600;
         color: $primary-color2;
 
         @include tablet {
-            margin-bottom: 2.4rem;
-            // &:nth-child(2) {
-            //     font-size: 20rem;
-            // }
+            display: none;
         }
     }
 
-
-    &__date {
+    &__date, &__venue, &__location {
         @include regular-text;
-        font-weight: 700;
+
+        @include tablet {
+            @include regular-text2;
+        }
     }
 
-    &__venue, &__location {
-        @include regular-text;
+    &__date {
+        font-weight: 500;
     }
     
     &__button {
@@ -181,6 +239,7 @@
 
         @include tablet {
            padding: 0.5rem 2.2rem;
+           margin: 0.5rem 0;
         }
     }
 
@@ -188,10 +247,13 @@
         background-color: $secondary-color2;
         height: 0.1rem;
         border: none;
-        margin: 1.6rem 0;
 
         @include tablet {
             margin: 0 1.8rem;
+        }
+
+        @include desktop {
+            margin: 0;
         }
     }
 
