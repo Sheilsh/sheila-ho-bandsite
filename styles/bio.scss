@@ -5,9 +5,7 @@
 @use './partials/nav' as *;
 @use './partials/footer' as *;
 
-
-
-// main index.html styling
+// -- bio hero section --
 
 .hero {
     &--indeximage {
@@ -27,7 +25,7 @@
     }
 }
 
-// --- article section ---
+// -- article section --
 
 .article {
 
@@ -37,17 +35,6 @@
 
     &__wrapper {
         @include wrapper-props;
-        // width: 100%;
-        // max-width: calc(100% - 3.2rem);
-        // margin: 0 auto;
-
-        // @include tablet {
-        //     max-width: calc(100% - 7.2rem);
-        // }
-
-        // @include desktop {
-        //     max-width: 102rem;
-        // }
     }
 
     &__container {
@@ -177,10 +164,10 @@
     }
 }
 
-// --- gallery section ---
+// -- gallery section --
 
 .gallery {
-    background-color: $secondary-color3;
+    background-color: $bandsite-alabaster;
     padding-bottom: 2.4rem;
 
     @include tablet {
@@ -189,36 +176,10 @@
 
     &__header {
         @include header-props;
-        // @include primary-heading;
-        // max-width: calc(100% - 3.2rem);
-        // padding: 2.4rem 0 1.6rem;
-        // margin: 0 auto;
-
-        // @include tablet {
-        //     @include secondary-heading2;
-        //     max-width: calc(100% - 7.2rem);
-        //     padding: 4.8rem 0 2.4rem;
-        //     margin: 0 auto;
-        // }
-
-        // @include desktop {
-        //     max-width: 102rem;
-        // }
     }
 
     &__wrapper {
         @include wrapper-props;
-        // width: 100%;
-        // max-width: calc(100% - 3.2rem);
-        // margin: 0 auto;
-
-        // @include tablet {
-        //     max-width: calc(100% - 7.2rem);
-        // }
-
-        // @include desktop {
-        //     max-width: 102rem;
-        // }
     }
 
     &__container {
@@ -248,7 +209,7 @@
     }
 }
 
-// --- comments and form section ---
+// -- comments and form section --
 
 .comments {
 
@@ -258,34 +219,10 @@
         @include tablet {
             padding: 4.8rem 0 3.6rem;
         }
-        // @include primary-heading;
-        // max-width: calc(100% - 3.2rem);
-        // padding: 2.4rem 0 1.6rem;
-        // margin: 0 auto;
-
-        // @include tablet {
-        //     @include secondary-heading2;
-        //     max-width: calc(100% - 7.2rem);
-        // }
-
-        // @include desktop {
-        //     max-width: 102rem;
-        // }
     }
 
     &__wrapper {
         @include wrapper-props;
-        // width: 100%;
-        // max-width: calc(100% - 3.2rem);
-        // margin: 0 auto;
-
-        // @include tablet {
-        //     max-width: calc(100% - 7.2rem);
-        // }
-
-        // @include desktop {
-        //     max-width: 102rem;
-        // }
     }
 
     &__submission, &__usercard {
@@ -301,6 +238,7 @@
 
     &__container {
         overflow-wrap: break-word;
+        padding-bottom: 1.6rem;
     }
 
     &__imagebox {
@@ -348,25 +286,25 @@
         @include label-text2;
         text-transform: uppercase;
         font-weight: 500;
-        color: $primary-color2;
+        color: $bandsite-silver;
         padding: 0.4rem 0;
     }
 
     & input, textarea {
         @include regular-text2;
-        padding: 1.2rem;
-        border: 1px solid $secondary-color2;
+        padding: 1rem 1.2rem;
+        border: 1px solid $bandsite-mercury;
         border-radius: 4px;
-        background-color: $secondary-color3;
+        background-color: $bandsite-alabaster;
 
         &::placeholder {
             @include regular-text2;
-            color: $primary-color1;
+            color: $bandsite-black;
         }
 
         &:focus {
             outline: none;
-            border: 1px solid $primary-color1;
+            border: 1px solid $bandsite-black;
         }
 
         &:required:focus:invalid {
@@ -376,7 +314,7 @@
 
         @include tablet {
             width: 51rem;
-            padding: 1.6rem;
+            padding: 1rem 1.6rem;
         }
 
         @include desktop {
@@ -393,22 +331,23 @@
         @include secondary-heading;
         font-weight: 600;
         text-transform: uppercase;
-        color: $secondary-color3;
-        background-color: $primary-color1;
-        border: 1px solid $primary-color1;
+        color: $bandsite-alabaster;
+        letter-spacing: 0.1rem;
+        background-color: $bandsite-black;
+        border: 1px solid $bandsite-black;
         border-radius: 4px;
-        padding: 1.2rem;
+        padding: 1rem 1.2rem;
         margin: 0.5rem 0 0;
 
         @include tablet {
             @include regular-text2;
-            width: 15rem;
+            width: 16rem;
             padding: 1rem 1.6rem;
         }
     }
 
     &__linebreak {
-        background-color: $secondary-color2;
+        background-color: $bandsite-mercury;
         height: 0.1rem;
         border: none;
         margin: 1.6rem 0;
@@ -423,22 +362,11 @@
         }
     }
 
-    // &__usercards {
-    //     display: flex;
-    //     gap: 1rem;
-
-    //     @include tablet {
-    //         justify-content: center;
-    //         gap: 2rem;
-    //     }
-    // }
-    // shares the same code with submissions
-
     &__userimage {
         width: 3.6rem;
         height: 3.6rem;
         border-radius: 50%;
-        background-color: $secondary-color2;
+        background-color: $bandsite-mercury;
 
         @include tablet {
             width: 4.8rem;
@@ -472,7 +400,7 @@
     }
 
     &__date {
-        color: $primary-color2;
+        color: $bandsite-silver;
     }
 }
 

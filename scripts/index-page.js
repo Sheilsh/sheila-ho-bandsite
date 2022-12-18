@@ -93,20 +93,15 @@ const formComment = document.querySelector("#comment");
 function displayComments(event) {
     let name = event.target.name.value;
     let comment = event.target.comment.value;
-    let validation = isNaN(name) && name.length > 3 && comment.length > 5;
+    let validation = isNaN(name) && name.length > 2 && comment.length > 2;
+    console.log(validation);
 
     if (validation) {
-        // const currentDate = new Date();
-        // let yyyy = currentDate.getFullYear();
-        // let mm = currentDate.getMonth() + 1;
-        // let dd = currentDate.getDate();
-        // let currentTimeStamp = `${mm}/${dd}/${yyyy}`;
 
         const DateTime = luxon.DateTime;
 
         const newComment = {
             name: name,
-            // date: moment().fromNow(),
             date: DateTime.now().toRelative(),
             comment: comment,
         };
@@ -116,7 +111,7 @@ function displayComments(event) {
         renderUsersComments();
 
     } else {
-        alert("Name and Comment are required");
+        alert("Name and/or Comment are required");
     }
 
     event.preventDefault();
@@ -124,19 +119,3 @@ function displayComments(event) {
 }
 
 formEl.addEventListener("submit", displayComments);
-
-
-
-// form time stamp 
-
-// function relativeDays(timestamp) {
-//     const rtf = new Intl.RelativeTimeFormat('en', {
-//       numeric: 'auto',
-//     });
-//     const oneDayInMs = 1000 * 60 * 60 * 24;
-//     const daysDifference = Math.round(
-//       (timestamp - new Date().getTime()) / oneDayInMs,
-//     );
-  
-//     return rtf.format(daysDifference, 'day');
-// }

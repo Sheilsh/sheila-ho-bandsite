@@ -4,8 +4,8 @@
 // footer html styling
 
 .footer {
-    background-color: $primary-color1;
-    color: $primary-color3;
+    background-color: $bandsite-black;
+    color: $bandsite-white;
 
     @include tablet {
         position: relative;
@@ -100,7 +100,7 @@
 
     &__email, a {
         @include regular-text;
-        color: $primary-color3;
+        color: $bandsite-white;
         font-style: normal;
         margin: 1rem 0;
 

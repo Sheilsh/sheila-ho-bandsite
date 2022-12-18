@@ -5,6 +5,8 @@
 @use '../styles/partials/nav' as *;
 @use '../styles/partials/footer' as *;
 
+// -- shows hero section --
+
 .hero {
     &--showimage {
         background-image: linear-gradient(
@@ -48,7 +50,7 @@
 
     &__title {
         @include regular-text;
-        color: $primary-color3;
+        color: $bandsite-white;
         padding: 1rem 0;
 
         @include tablet {
@@ -96,7 +98,7 @@
     }
 }
 
-// ---------- Show Section ---------------
+// -- show section --
 
 .shows {
     margin: 1rem 0;
@@ -105,7 +107,6 @@
         display: flex;
         justify-content: center;
         gap: 10rem;
-        // margin: 4rem 0 1rem;
     }
 
     &__header {
@@ -122,10 +123,6 @@
        }
     }
 
-    // &__wrapper {
-       
-    // }
-
     &__titles--hidden {
         display: none;
 
@@ -134,7 +131,7 @@
             @include label-text2;
             text-transform: uppercase;
             font-weight: 600;
-            color: $primary-color2;
+            color: $bandsite-silver;
             max-width: calc(100% - 3.2rem);
             margin: 0 auto;
             display: grid;
@@ -144,28 +141,14 @@
         }
 
         @include desktop {
-            grid-template-columns: 1.8fr 1fr 1.1fr 1fr;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
             gap: 2.4rem;
             padding: 6.8rem 0 1rem;
-
-            // -- try flex 
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: flex-start;
-            // gap: 6rem;
-            // padding: 3.6rem 1.8rem 2.4rem;
-
         }
     }
 
-    // &__titles--hidden > p {
-
-    //     //--- try flex
-    //     // width: 15rem;
-    // }
-
     &__container {
-        padding-bottom: 1.6rem;
+        padding-bottom: 1rem;
 
         @include tablet {
             padding-bottom: 3.6rem;
@@ -182,45 +165,29 @@
             display: grid;
             align-items: center;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            // padding: 2.4rem 1.8rem;
             padding: 1.8rem;
         }
 
         @include desktop {
             max-width: 102rem;
-            grid-template-columns: 1.8fr 1fr 1.1fr 1fr;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
             gap: 2.4rem;
-
-            // //-- try flex
-            // display: flex;
-            // flex-direction: row;
-            // justify-content: flex-start;
-            // gap: 10rem;
         }
 
         &:hover {
-            background-color: $secondary-color3;
+            background-color: $bandsite-alabaster;
         }
     }
 
     & .active {
-        background-color: $secondary-color2;
+        background-color: $bandsite-mercury;
     }
-
-    // &__info {
-    //     flex-grow: 2;
-
-    //     // //  --- try flex
-    //     // &:first-child {
-    //     //     flex-grow: 2;
-    //     // }
-    // }
 
     &__title {
         @include label-text;
         text-transform: uppercase;
         font-weight: 600;
-        color: $primary-color2;
+        color: $bandsite-silver;
 
         @include tablet {
             display: none;
@@ -230,48 +197,41 @@
     &__date, &__venue, &__location {
         @include regular-text;
 
-        //--- try flex
-        // width: 12rem;
-
         @include tablet {
             @include regular-text2;
         }
     }
 
     &__date {
-        font-weight: 500;
-
-        // -- try flex
-        // width: 15rem;
+        font-weight: 600;
     }
     
     &__button {
         @include secondary-heading;
         font-weight: 500;
         text-transform: uppercase;
-        color: $secondary-color3;
-        background-color: $primary-color1;
-        border: 1px solid $primary-color1;
+        color: $bandsite-alabaster;
+        letter-spacing: 0.05rem;
+        background-color: $bandsite-black;
+        border: 1px solid $bandsite-black;
         border-radius: 4px;
         padding: 1.2rem;
         margin: 0.5rem 0 0;
 
         @include tablet {
             @include regular-text2;
-            padding: 0.5rem 1.2rem;
+            padding: 1rem 1.2rem;
         }
 
-        @include tablet {
-           padding: 0.5rem 2.2rem;
+        @include desktop {
+            width: 16rem;
+           padding: 1rem 2.2rem;
            margin-bottom: 0.5rem;
-
-           //--- try flex
-        //    width: 20rem;
         }
     }
 
     &__linebreak {
-        background-color: $secondary-color2;
+        background-color: $bandsite-mercury;
         height: 0.1rem;
         border: none;
 
@@ -283,6 +243,4 @@
             margin: 0;
         }
     }
-
-
 }

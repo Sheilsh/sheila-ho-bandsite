@@ -33,29 +33,6 @@ let listOfShows = [
     },
 ];
 
-//  ---------  created div for show title hidden container 
-
-// let showWrapper = document.querySelector(".shows__wrapper");
-// console.log(showWrapper.innerHTML);
-
-// let hiddenTitleContainer = document.createElement("div");
-// hiddenTitleContainer.classList.add("shows__titles--hidden")
-
-// let hiddenTitle1 = document.createElement("p");
-// hiddenTitle1.innerText = "Date";
-
-// let hiddenTitle2 = document.createElement("p");
-// hiddenTitle2.innerText = "Venue";
-
-// let hiddenTitle3 = document.createElement("p");
-// hiddenTitle3.innerText = "Location";
-
-// hiddenTitleContainer.append(hiddenTitle1, hiddenTitle2, hiddenTitle3);
-// showWrapper.prepend(hiddenTitleContainer);
-
-
-// --- shows sub titles hidden div used for mobile and desktop view ----
-
 let showWrapper = document.querySelector(".shows__wrapper");
 let hiddenTitleContainer = document.querySelector(".shows__titles--hidden")
 
@@ -72,7 +49,6 @@ hiddenTitleContainer.append(hiddenTitle1, hiddenTitle2, hiddenTitle3);
 showWrapper.prepend(hiddenTitleContainer);
 
 // ----- shows ------
-
 
 function showsOption(listOfShows) {
     let showCard = document.createElement("div");
@@ -127,12 +103,9 @@ function showsOption(listOfShows) {
 
 function renderShowCards() {
     const showSectionEl = document.querySelector(".shows__container");
-    
-    // showSectionEl.innerHTML = "";
 
     for (let i = 0; i < listOfShows.length; i++) {
         showSectionEl.appendChild(showsOption(listOfShows[i]));
-
        
         let lineBreak = document.createElement("hr");
         lineBreak.classList.add("shows__linebreak")
@@ -141,8 +114,7 @@ function renderShowCards() {
 }
 renderShowCards();
 
-
-// button - selected state
+// ---- button - selected states
 let showsContain = document.querySelector(".shows__container");
 let showsRow = showsContain.getElementsByClassName("shows__card");
 
@@ -150,7 +122,6 @@ for (let i = 0; i < showsRow.length; i++) {
   showsRow[i].addEventListener("click", function() {
     let selected = document.getElementsByClassName("active");
 
-    // If there's no active class
     if (selected.length > 0) {
       selected[0].className = selected[0].className.replace(" active", "");
     }
@@ -159,7 +130,7 @@ for (let i = 0; i < showsRow.length; i++) {
 }
 
 let showsHeaders = document.querySelector(".shows__title");
-// console.log(showsHeaders);
+
 showsHeaders.addEventListener("click", function() {
     showsHeaders.classList.toggle(".shows__titles--selected");
 });
