@@ -8,8 +8,8 @@
 .hero {
     &--showimage {
         background-image: linear-gradient(
-        rgba(50, 50, 50, 0.5),
-        rgba(50, 50, 50, 0.5)), 
+        rgba(50, 50, 50, 0.4),
+        rgba(50, 50, 50, 0.4)), 
         url(../assets/images/hero-shows.jpg);
         background-position: 0%;
         background-size: cover;
@@ -144,11 +144,25 @@
         }
 
         @include desktop {
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 1.8fr 1fr 1.1fr 1fr;
             gap: 2.4rem;
             padding: 6.8rem 0 1rem;
+
+            // -- try flex 
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: flex-start;
+            // gap: 6rem;
+            // padding: 3.6rem 1.8rem 2.4rem;
+
         }
     }
+
+    // &__titles--hidden > p {
+
+    //     //--- try flex
+    //     // width: 15rem;
+    // }
 
     &__container {
         padding-bottom: 1.6rem;
@@ -168,25 +182,20 @@
             display: grid;
             align-items: center;
             grid-template-columns: 1fr 1fr 1fr 1fr;
-            padding: 2.4rem 1.8rem;
-
-            // &:nth-child(n + 2) .shows__info .shows__title {
-            //     display: none;
-            // }
-
-            // &:first-child .shows__info .shows__title {
-            //     padding-bottom: 3.6rem;
-            // }
-
-            // &:first-child .shows__button {
-            //     margin: 4.6rem 0 0;
-            // }
+            // padding: 2.4rem 1.8rem;
+            padding: 1.8rem;
         }
 
         @include desktop {
             max-width: 102rem;
-            grid-template-columns: 2fr 1fr 1fr 1fr;
+            grid-template-columns: 1.8fr 1fr 1.1fr 1fr;
             gap: 2.4rem;
+
+            // //-- try flex
+            // display: flex;
+            // flex-direction: row;
+            // justify-content: flex-start;
+            // gap: 10rem;
         }
 
         &:hover {
@@ -197,6 +206,15 @@
     & .active {
         background-color: $secondary-color2;
     }
+
+    // &__info {
+    //     flex-grow: 2;
+
+    //     // //  --- try flex
+    //     // &:first-child {
+    //     //     flex-grow: 2;
+    //     // }
+    // }
 
     &__title {
         @include label-text;
@@ -212,6 +230,9 @@
     &__date, &__venue, &__location {
         @include regular-text;
 
+        //--- try flex
+        // width: 12rem;
+
         @include tablet {
             @include regular-text2;
         }
@@ -219,6 +240,9 @@
 
     &__date {
         font-weight: 500;
+
+        // -- try flex
+        // width: 15rem;
     }
     
     &__button {
@@ -239,7 +263,10 @@
 
         @include tablet {
            padding: 0.5rem 2.2rem;
-           margin: 0.5rem 0;
+           margin-bottom: 0.5rem;
+
+           //--- try flex
+        //    width: 20rem;
         }
     }
 

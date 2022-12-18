@@ -15,6 +15,15 @@
         rgba(50, 50, 50, 0.4),
         rgba(50, 50, 50, 0.4)), 
         url(../assets/images/hero-bio.jpg);
+
+        @include tablet {
+            height: 50rem;
+        }
+
+        @include desktop {
+            background-position: 0% 21%;
+            height: 65rem;
+        }
     }
 }
 

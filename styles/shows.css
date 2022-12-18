@@ -61,16 +61,6 @@ a {
   min-width: 100%;
   height: 20rem;
 }
-@media (min-width: 768px) {
-  .hero {
-    height: 50rem;
-  }
-}
-@media (min-width: 1280px) {
-  .hero {
-    height: 65rem;
-  }
-}
 .hero__wrapper {
   display: flex;
   align-items: center;
@@ -333,7 +323,7 @@ a {
 }
 
 .hero--showimage {
-  background-image: linear-gradient(rgba(50, 50, 50, 0.5), rgba(50, 50, 50, 0.5)), url(../assets/images/hero-shows.jpg);
+  background-image: linear-gradient(rgba(50, 50, 50, 0.4), rgba(50, 50, 50, 0.4)), url(../assets/images/hero-shows.jpg);
   background-position: 0%;
   background-size: cover;
   background-repeat: no-repeat;
@@ -491,7 +481,7 @@ a {
 }
 @media (min-width: 1280px) {
   .shows__titles--hidden {
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1.8fr 1fr 1.1fr 1fr;
     gap: 2.4rem;
     padding: 6.8rem 0 1rem;
   }
@@ -519,13 +509,13 @@ a {
     display: grid;
     align-items: center;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    padding: 2.4rem 1.8rem;
+    padding: 1.8rem;
   }
 }
 @media (min-width: 1280px) {
   .shows__card {
     max-width: 102rem;
-    grid-template-columns: 2fr 1fr 1fr 1fr;
+    grid-template-columns: 1.8fr 1fr 1.1fr 1fr;
     gap: 2.4rem;
   }
 }
@@ -587,7 +577,7 @@ a {
 @media (min-width: 768px) {
   .shows__button {
     padding: 0.5rem 2.2rem;
-    margin: 0.5rem 0;
+    margin-bottom: 0.5rem;
   }
 }
 .shows__linebreak {

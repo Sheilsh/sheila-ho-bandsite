@@ -25,7 +25,7 @@ let listOfComments = [
 function commentCards(listOfComments) { 
 
     // user card element
-    let userCard = document.createElement("article");
+    let userCard = document.createElement("div");
     userCard.classList.add("comments__usercard");
 
     //user imgbox with img inside
@@ -72,8 +72,6 @@ function commentCards(listOfComments) {
 // function for rendering users to the html
 function renderUsersComments() {
     const commentSectionEl = document.querySelector(".comments__container");
-    
-    // commentSectionEl.value = "";
 
     for (let i = 0; i < listOfComments.length; i++) {
         commentSectionEl.appendChild(commentCards(listOfComments[i]));
@@ -83,7 +81,6 @@ function renderUsersComments() {
         commentSectionEl.appendChild(lineBreak);
     }
 }
-
 renderUsersComments();
 
 // form submit data
@@ -94,25 +91,52 @@ const formComment = document.querySelector("#comment");
 
 
 function displayComments(event) {
+    let name = event.target.name.value;
+    let comment = event.target.comment.value;
+    let validation = isNaN(name) && name.length > 3 && comment.length > 5;
+
+    if (validation) {
+        // const currentDate = new Date();
+        // let yyyy = currentDate.getFullYear();
+        // let mm = currentDate.getMonth() + 1;
+        // let dd = currentDate.getDate();
+        // let currentTimeStamp = `${mm}/${dd}/${yyyy}`;
+
+        const DateTime = luxon.DateTime;
+
+        const newComment = {
+            name: name,
+            // date: moment().fromNow(),
+            date: DateTime.now().toRelative(),
+            comment: comment,
+        };
+        
+        listOfComments.unshift(newComment);
+        document.querySelector(".comments__container").innerHTML = "",
+        renderUsersComments();
+
+    } else {
+        alert("Name and Comment are required");
+    }
+
     event.preventDefault();
-
-    const currentDate = new Date();
-    let yyyy = currentDate.getFullYear();
-    let mm = currentDate.getMonth() + 1;
-    let dd = currentDate.getDate();
-    let currentTimeStamp = `${mm}/${dd}/${yyyy}`;
-
-    const newComment = {
-        name: event.target.name.value,
-        date: currentTimeStamp,
-        comment: event.target.comment.value,
-    };
-
-    
-    listOfComments.unshift(newComment);
-    document.querySelector(".comments__container").innerHTML = "",
-    renderUsersComments();
     event.target.reset();
 }
 
 formEl.addEventListener("submit", displayComments);
+
+
+
+// form time stamp 
+
+// function relativeDays(timestamp) {
+//     const rtf = new Intl.RelativeTimeFormat('en', {
+//       numeric: 'auto',
+//     });
+//     const oneDayInMs = 1000 * 60 * 60 * 24;
+//     const daysDifference = Math.round(
+//       (timestamp - new Date().getTime()) / oneDayInMs,
+//     );
+  
+//     return rtf.format(daysDifference, 'day');
+// }
