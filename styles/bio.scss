@@ -5,54 +5,27 @@
 @use './partials/nav' as *;
 @use './partials/footer' as *;
 
-
-
-// main index.html styling
+// -- bio hero section --
 
 .hero {
-    background-image: linear-gradient(
+    &--indeximage {
+        background-image: linear-gradient(
         rgba(50, 50, 50, 0.4),
         rgba(50, 50, 50, 0.4)), 
         url(../assets/images/hero-bio.jpg);
-    background-position: center;
-    background-size: cover;
-    min-width: 100%;
-    height: 20rem;
-
-    @include tablet {
-        height: 50rem;
-    }
-
-    @include desktop {
-        height: 65rem;
-    }
-
-    &__wrapper {
-        position: relative;
-        display: flex;
-        align-items: center;
-        height: 100%;
-        margin: 0 auto;
-        max-width: calc(100% - 3.2rem);
 
         @include tablet {
-            max-width: calc(100% - 7.2rem);
+            height: 50rem;
         }
-        
+
         @include desktop {
-            max-width: 102rem;
-        }
-    }
-
-    &__header {
-        @include primary-heading;
-        color: $primary-color3;
-
-        @include tablet {
-            @include primary-heading2;
+            background-position: 0% 21%;
+            height: 65rem;
         }
     }
 }
+
+// -- article section --
 
 .article {
 
@@ -61,17 +34,7 @@
     }
 
     &__wrapper {
-        width: 100%;
-        max-width: calc(100% - 3.2rem);
-        margin: 0 auto;
-
-        @include tablet {
-            max-width: calc(100% - 7.2rem);
-        }
-
-        @include desktop {
-            max-width: 102rem;
-        }
+        @include wrapper-props;
     }
 
     &__container {
@@ -149,8 +112,7 @@
     }
 
     &__contentbox {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
         gap: 2rem;
     }
 
@@ -172,8 +134,7 @@
     }
 
     &__subbox {
-        display: flex;
-        flex-direction: column;
+        @include flex-col;
         gap: 2rem;
 
         @include tablet {
@@ -203,8 +164,10 @@
     }
 }
 
+// -- gallery section --
+
 .gallery {
-    background-color: $secondary-color3;
+    background-color: $bandsite-alabaster;
     padding-bottom: 2.4rem;
 
     @include tablet {
@@ -212,35 +175,11 @@
     }
 
     &__header {
-        @include primary-heading;
-        max-width: calc(100% - 3.2rem);
-        padding: 2.4rem 0 1.6rem;
-        margin: 0 auto;
-
-        @include tablet {
-            @include secondary-heading2;
-            max-width: calc(100% - 7.2rem);
-            padding: 4.8rem 0 2.4rem;
-            margin: 0 auto;
-        }
-
-        @include desktop {
-            max-width: 102rem;
-        }
+        @include header-props;
     }
 
     &__wrapper {
-        width: 100%;
-        max-width: calc(100% - 3.2rem);
-        margin: 0 auto;
-
-        @include tablet {
-            max-width: calc(100% - 7.2rem);
-        }
-
-        @include desktop {
-            max-width: 102rem;
-        }
+        @include wrapper-props;
     }
 
     &__container {
@@ -270,4 +209,190 @@
     }
 }
 
+// -- comments and form section --
+
+.comments {
+
+    &__header {
+        @include header-props;
+
+        @include tablet {
+            padding: 4.8rem 0 3.6rem;
+        }
+    }
+
+    &__wrapper {
+        @include wrapper-props;
+    }
+
+    &__submission, &__usercard {
+        width: 100%;
+        display: flex;
+        gap: 1rem;
+
+        @include tablet {
+            justify-content: center;
+            gap: 2rem;
+        }
+    }
+
+    &__container {
+        overflow-wrap: break-word;
+        padding-bottom: 1.6rem;
+    }
+
+    &__imagebox {
+        max-width: 100%;
+    }
+
+    &__image {
+        background-image: url(../assets/images/Mohan-muruge.jpg);
+        background-position: 25% 50%;
+        background-size: cover;
+        width: 3.6rem;
+        height: 3.6rem;
+        border-radius: 50%;
+        margin: 3.4rem 0;
+
+        @include tablet {
+            width: 4.8rem;
+            height: 4.8rem;
+        }
+    }
+
+    &__formbox {
+        width: 100%;
+        resize: vertical;
+
+        @include tablet {
+            width: fit-content;
+        }
+    }
+
+    &__form {
+        @include flex-col;
+        gap: 1rem;
+
+        @include tablet {
+            align-items: flex-end;
+        }
+    }
+
+    &__formcontain {
+        @include flex-col;
+    }
+    
+    &__formheader {
+        @include label-text2;
+        text-transform: uppercase;
+        font-weight: 500;
+        color: $bandsite-silver;
+        padding: 0.4rem 0;
+    }
+
+    & input, textarea {
+        @include regular-text2;
+        padding: 1rem 1.2rem;
+        border: 1px solid $bandsite-mercury;
+        border-radius: 4px;
+        background-color: $bandsite-alabaster;
+
+        &::placeholder {
+            @include regular-text2;
+            color: $bandsite-black;
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid $bandsite-black;
+        }
+
+        &:required:focus:invalid {
+            outline: none;
+            border: 1px solid #D22D2D;
+        }
+
+        @include tablet {
+            width: 51rem;
+            padding: 1rem 1.6rem;
+        }
+
+        @include desktop {
+            width: 43rem;
+        }
+    }
+
+    & textarea { 
+        height: 10rem;
+        resize: none;
+    }
+
+    & button {
+        @include button;
+
+        @include tablet {
+            @include regular-text2;
+            line-height: 1.2rem;
+            width: 15rem;
+            padding: 1rem 1.6rem;
+        }
+    }
+
+    &__linebreak {
+        background-color: $bandsite-mercury;
+        height: 0.1rem;
+        border: none;
+        margin: 1.6rem 0;
+
+        @include tablet {
+            margin: 2.4rem auto;
+            width: 58rem;
+        }
+
+        @include desktop {
+            width: 50rem;
+        }
+    }
+
+    &__userimage {
+        width: 3.6rem;
+        height: 3.6rem;
+        border-radius: 50%;
+        background-color: $bandsite-mercury;
+
+        @include tablet {
+            width: 4.8rem;
+            height: 4.8rem;
+        }
+    }
+
+    &__usercontent {
+        @include regular-text;
+        @include flex-col;
+        width: 100%;
+
+        @include tablet {
+            @include regular-text2;
+            width: 51rem;
+        }
+
+        @include desktop {
+            width: 43rem;
+        }
+    }
+
+    &__userinfo {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 1rem;
+    }
+
+    &__username {
+        font-weight: 700;
+    }
+
+    &__date {
+        color: $bandsite-silver;
+    }
+}
 

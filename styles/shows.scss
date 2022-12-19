@@ -1,0 +1,236 @@
+@use '../styles/partials/fonts' as *;
+@use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
+@use '../styles/partials/global' as *;
+@use '../styles/partials/nav' as *;
+@use '../styles/partials/footer' as *;
+
+// -- shows hero section --
+
+.hero {
+    &--showimage {
+        background-image: linear-gradient(
+        rgba(50, 50, 50, 0.4),
+        rgba(50, 50, 50, 0.4)), 
+        url(../assets/images/hero-shows.jpg);
+        background-position: 0%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 31rem;
+
+        @include tablet {
+            height: 47rem;
+        }
+
+        @include desktop {
+            background-position: 0 27%;
+            height: 65rem;
+        }
+    }
+
+    &__container {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 1rem;
+
+        @include tablet {
+            gap: 3rem;
+        }
+
+        @include desktop {
+            flex-direction: row;
+            align-items: center;
+            gap: 5rem;
+        }
+    }
+
+    &__title {
+        @include regular-text;
+        color: $bandsite-white;
+        padding: 1rem 0;
+
+        @include tablet {
+            @include primary-heading;
+            font-weight: 500;
+        }
+
+        @include desktop {
+            padding: 2rem 0;
+        }
+    }
+
+    &__header {
+
+        &--showheader {
+            width: 80%;
+
+            @include desktop {
+                width: 90%;
+            }
+        }
+    }
+
+    &__song {
+        margin: 1rem 0;
+
+        @include desktop {
+            transform: translate(33px, 35px);
+        }
+    }
+
+    & iframe {
+        border-radius: 4px;
+
+        @include tablet {
+            width: 40rem;
+            height: 14rem;
+        }
+
+        @include desktop {
+            @include label-text2;
+            width: 44rem;
+            height: 15rem;
+        }
+    }
+}
+
+// -- show section --
+
+.shows {
+    margin: 1rem 0;
+
+    @include desktop {
+        display: flex;
+        justify-content: center;
+        gap: 10rem;
+    }
+
+    &__header {
+       @include header-props;
+
+       @include tablet {
+            max-width: calc(100% - 3.2rem);
+            padding: 4.8rem 1.8rem 3.6rem;
+       }
+
+       @include desktop {
+            max-width: 102rem;
+            margin: 0;
+       }
+    }
+
+    &__titles--hidden {
+        display: none;
+
+        @include tablet {
+            display: contents;
+            @include label-text2;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: $bandsite-silver;
+            max-width: calc(100% - 3.2rem);
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            gap: 1.5rem;
+            padding: 0 1.8rem;
+        }
+
+        @include desktop {
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 2.4rem;
+            padding: 6.8rem 0 1rem;
+        }
+    }
+
+    &__container {
+        padding-bottom: 1rem;
+
+        @include tablet {
+            padding-bottom: 3.6rem;
+        }
+    }
+
+    &__card {
+        @include flex-col;
+        gap: 1.5rem;
+        padding: 1.6rem;
+
+        @include tablet {
+            @include wrapper-small;
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            padding: 1.8rem;
+        }
+
+        @include desktop {
+            max-width: 102rem;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 2.4rem;
+        }
+
+        &:hover {
+            background-color: $bandsite-alabaster;
+        }
+    }
+
+    & .active {
+        background-color: $bandsite-mercury;
+    }
+
+    &__title {
+        @include label-text;
+        text-transform: uppercase;
+        font-weight: 600;
+        color: $bandsite-silver;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__date, &__venue, &__location {
+        @include regular-text;
+
+        @include tablet {
+            @include regular-text2;
+        }
+    }
+
+    &__date {
+        font-weight: 600;
+    }
+    
+    &__button {
+        @include button;
+
+        @include tablet {
+            @include regular-text2;
+            line-height: 1.2rem;
+        }
+
+        @include desktop {
+            width: 16rem;
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__linebreak {
+        background-color: $bandsite-mercury;
+        height: 0.1rem;
+        border: none;
+
+        @include tablet {
+            margin: 0 1.8rem;
+        }
+
+        @include desktop {
+            margin: 0;
+        }
+    }
+}

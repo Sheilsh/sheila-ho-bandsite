@@ -1,11 +1,11 @@
 @use './variables' as *;
 @use './mixins' as *;
 
-// header nav styling
+// -- header nav styling --
 
 .nav {
-    background-color: $primary-color1;
-    color: $primary-color3;
+    background-color: $bandsite-black;
+    color: $bandsite-white;
 
     &__container {
         @include flex-col-center;
@@ -44,7 +44,6 @@
             gap: 4rem;
         }
     }
-    
 
     &__items {
         width: 16rem;
@@ -53,22 +52,22 @@
         & a {
             @include secondary-heading;
             text-decoration: none;
-            color: $primary-color3;
+            color: $bandsite-white;
         }
     
         &--active {
             font-weight: 500;
-            border-bottom: 3px solid $primary-color3;
+            border-bottom: 3px solid $bandsite-white;
             padding-bottom: 1rem;
         }
 
         &--inactive a {
-            color: $secondary-color2;
+            color: $bandsite-mercury;
         }
 
         &:hover,
         &:active {
-            border-bottom: 3px solid $primary-color3;
+            border-bottom: 3px solid $bandsite-white;
             padding-bottom: 2rem;
         }
 

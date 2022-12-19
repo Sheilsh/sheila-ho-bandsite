@@ -1,31 +1,19 @@
 @use './fonts' as *;
 
 // Primary Colors
-$primary-color1: #323232;
-$primary-color2: #AFAFAF;
-$primary-color3: #FFF;
+$bandsite-black: #323232;
+$bandsite-silver: #AFAFAF;
+$bandsite-white: #FFF;
 
 // Secondary Colors
-$secondary-color1: #000;
-$secondary-color2: #E1E1E1;
-$secondary-color3: #FAFAFA;
-
-
-// Mobile Styles
+$bandsite-darkblack: #000;
+$bandsite-mercury: #E1E1E1;
+$bandsite-alabaster: #FAFAFA;
 
 
 //break points
 $tablet-breakpoint: 768px;
 $desktop-breakpoint: 1280px;
 
-
-
 // Typeface
 $type-face: 'Avenir';
-
-// font weight
-// $font-weights: (
-//     'regular': 400,
-//     'semi-bold': 600,
-//     'bold': 700
-// )
