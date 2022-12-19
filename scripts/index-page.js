@@ -1,6 +1,6 @@
 // ----- Form Comment Display -----
 
-// array of users and comments
+// ---- array of users and comments ----
 
 let listOfComments = [
     { 
@@ -20,7 +20,7 @@ let listOfComments = [
     },
 ];
 
-// funtion for elements based on list of users array
+// ---- funtion for elements based on list of comments array ----
 
 function commentCards(listOfComments) { 
 
@@ -69,7 +69,7 @@ function commentCards(listOfComments) {
     return userCard;
 }
 
-// function for rendering users to the html
+// ---- function for rendering users to the html ----
 function renderUsersComments() {
     const commentSectionEl = document.querySelector(".comments__container");
 
@@ -83,7 +83,7 @@ function renderUsersComments() {
 }
 renderUsersComments();
 
-// form submit data
+// ---- form comment submit ----
 const formEl = document.querySelector(".comments__form");
 const formName = document.querySelector("#name");
 const formDate = document.querySelector(".comments__date");
@@ -111,7 +111,7 @@ function displayComments(event) {
         renderUsersComments();
 
     } else {
-        alert("Name and/or Comment are required");
+        alert("Name and/or comment are required");
     }
 
     event.preventDefault();

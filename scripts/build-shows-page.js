@@ -1,5 +1,7 @@
 // ----- Show Dates and Venue -----
 
+// ---- array of shows info ----
+
 let listOfShows = [
     {
         date: "Mon Sept 06 2021",
@@ -32,6 +34,8 @@ let listOfShows = [
         location: "San Francisco, CA",
     },
 ];
+
+// ---- shows hidden titles ----
 
 let showWrapper = document.querySelector(".shows__wrapper");
 let hiddenTitleContainer = document.querySelector(".shows__titles--hidden")
@@ -101,6 +105,8 @@ function showsOption(listOfShows) {
     return showCard;
 }
 
+// ---- function for rendering shows list ----
+
 function renderShowCards() {
     const showSectionEl = document.querySelector(".shows__container");
 
@@ -114,7 +120,7 @@ function renderShowCards() {
 }
 renderShowCards();
 
-// ---- button - selected states
+// ---- shows - selected states ----
 let showsContain = document.querySelector(".shows__container");
 let showsRow = showsContain.getElementsByClassName("shows__card");
 

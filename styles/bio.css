@@ -751,7 +751,8 @@ a {
   font-weight: 600;
   text-transform: uppercase;
   color: #FAFAFA;
-  letter-spacing: 0.1rem;
+  line-height: 1.2rem;
+  letter-spacing: 0.05rem;
   background-color: #323232;
   border: 1px solid #323232;
   border-radius: 4px;
@@ -767,6 +768,7 @@ a {
     font-family: "Avenir", sans-serif;
     font-size: 1.4rem;
     line-height: 2.2rem;
+    line-height: 1.2rem;
     width: 15rem;
     padding: 1rem 1.6rem;
   }

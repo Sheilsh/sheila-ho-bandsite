@@ -328,24 +328,11 @@
     }
 
     & button {
-        @include secondary-heading;
-        font-weight: 600;
-        text-transform: uppercase;
-        color: $bandsite-alabaster;
-        letter-spacing: 0.1rem;
-        background-color: $bandsite-black;
-        border: 1px solid $bandsite-black;
-        border-radius: 4px;
-        height: 4rem;
-        padding: 1rem 1.2rem;
-        margin: 0.5rem 0 0;
-
-        &:hover {
-            background-color: $bandsite-darkblack;
-        }
+        @include button;
 
         @include tablet {
             @include regular-text2;
+            line-height: 1.2rem;
             width: 15rem;
             padding: 1rem 1.6rem;
         }

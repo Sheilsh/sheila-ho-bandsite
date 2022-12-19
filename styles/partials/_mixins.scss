@@ -9,7 +9,7 @@
     line-height: $line-height; 
 }
 
-//mobile text styles
+//-- mobile text styles --
 
 //primary page/section header
 @mixin primary-heading {
@@ -32,7 +32,7 @@
 }
 
 
-//desktop & tablet text styles
+// -- desktop & tablet text styles --
 
 //primary page/section header
 @mixin primary-heading2 {
@@ -54,7 +54,7 @@
     @include default-font(1.2rem, 2rem);
 }
 
-//flexbox mixin
+// -- flexbox mixin --
 
 @mixin flex-col-center {
     display: flex;
@@ -67,7 +67,7 @@
     flex-direction: column;
 }
 
-// wrapper & container mixin 
+// -- wrapper & container mixin --
 
 @mixin wrapper-props {
     width: 100%;
@@ -91,7 +91,7 @@
     margin: 0 auto;
 }
 
-// headers 
+// -- headers --
 
 @mixin header-props {
     @include primary-heading;
@@ -109,7 +109,28 @@
     }
 }
 
-// media queries
+// -- buttons -- 
+
+@mixin button {
+    @include secondary-heading;
+        font-weight: 600;
+        text-transform: uppercase;
+        color: $bandsite-alabaster;
+        line-height: 1.2rem;
+        letter-spacing: 0.05rem;
+        background-color: $bandsite-black;
+        border: 1px solid $bandsite-black;
+        border-radius: 4px;
+        height: 4rem;
+        padding: 1rem 1.2rem;
+        margin: 0.5rem 0 0;
+
+        &:hover {
+            background-color: $bandsite-darkblack;
+        }
+}
+
+// -- media queries --
 
 @mixin tablet {
     @media (min-width: $tablet-breakpoint) {
