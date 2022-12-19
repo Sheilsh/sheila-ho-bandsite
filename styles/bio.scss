@@ -336,12 +336,17 @@
         background-color: $bandsite-black;
         border: 1px solid $bandsite-black;
         border-radius: 4px;
+        height: 4rem;
         padding: 1rem 1.2rem;
         margin: 0.5rem 0 0;
 
+        &:hover {
+            background-color: $bandsite-darkblack;
+        }
+
         @include tablet {
             @include regular-text2;
-            width: 16rem;
+            width: 15rem;
             padding: 1rem 1.6rem;
         }
     }
