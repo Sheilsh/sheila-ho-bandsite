@@ -1,11 +1,13 @@
 // ----- Form Comment Display -----
 
-// -------------- axios comments --------------------
+// -------------- api comments data --------------------
 
 const apiURL = "https://project-1-api.herokuapp.com/register";
-const apiKey = "971e0594-0b16-49ba-9789-f91558cdc707";
+const apiKey = {
+    "api_key":"971e0594-0b16-49ba-9789-f91558cdc707"
+};
 
-const apiComments = "https://project-1-api.herokuapp.com/comments/?api_key=%3C971e0594-0b16-49ba-9789-f91558cdc707%3E";
+const apiShowDates = "https://project-1-api.herokuapp.com/comments/?api_key=%3C971e0594-0b16-49ba-9789-f91558cdc707%3E";
 
 
 axios 
@@ -13,7 +15,7 @@ axios
     // .then((register) => {
     //     console.log(register);
     // })
-    .get(apiComments)
+    .get(apiShowDates)
     .then((listOfComments) => {
         console.log(listOfComments);
 
@@ -21,7 +23,7 @@ axios
     })
     .catch((error) => {
         console.error(error);
-      });
+    });
 
 // ---- funtion for elements based on list of comments array ----
 
@@ -89,18 +91,19 @@ function renderUsersComments(apiComments) {
 // renderUsersComments();
 
 // ---- function for time stamp ----
+// need to fix time stamp 
 
-function relativeDays(timestamp) {
-    const rtf = new Intl.RelativeTimeFormat('en', {
-      numeric: 'auto',
-    });
-    const oneDayInMs = 1000 * 60 * 60 * 24;
-    const daysDifference = Math.round(
-      (timestamp - new Date().getTime()) / oneDayInMs,
-    );
+// function relativeDays(timestamp) {
+//     const rtf = new Intl.RelativeTimeFormat('en', {
+//       numeric: 'auto',
+//     });
+//     const oneDayInMs = 1000 * 60 * 60 * 24;
+//     const daysDifference = Math.round(
+//       (timestamp - new Date().getTime()) / oneDayInMs,
+//     );
   
-    return rtf.format(daysDifference, 'day');
-}
+//     return rtf.format(daysDifference, 'day');
+// }
 
 
 // ---- form comment submit ----
@@ -110,11 +113,10 @@ const formDate = document.querySelector(".comments__date");
 const formComment = document.querySelector("#comment");
 
 
-function displayComments(event) {
+function displayComment(event) {
     let name = event.target.name.value;
     let comment = event.target.comment.value;
     let validation = isNaN(name) && name.length > 2 && comment.length > 2;
-    console.log(validation);
 
     if (validation) {
 
@@ -139,4 +141,4 @@ function displayComments(event) {
     event.target.reset();
 }
 
-formEl.addEventListener("submit", displayComments);
+formEl.addEventListener("submit", displayComment);

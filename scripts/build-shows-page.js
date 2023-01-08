@@ -1,39 +1,24 @@
 // ----- Show Dates and Venue -----
 
-// ---- array of shows info ----
+// ---- api show data -------
 
-let listOfShows = [
-    {
-        date: "Mon Sept 06 2021",
-        venue: "Ronald Lane",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Tue Sept 21 2021",
-        venue: "Pier 3 East",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Fri Oct 15 2021",
-        venue: "View Lounge",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Sat Nov 06 2021",
-        venue: "Hyatt Agency",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Fri Nov 26 2021",
-        venue: "Moscow Center",
-        location: "San Francisco, CA",
-    },
-    {
-        date: "Wed Dec 15 2021",
-        venue: "Press Club",
-        location: "San Francisco, CA",
-    },
-];
+const apiURL = "https://project-1-api.herokuapp.com/register";
+const apiKey = {
+    "api_key":"296396b1-e4ba-4315-9b34-bc3ff9c12ea7"
+};
+
+const apiShowDates = "https://project-1-api.herokuapp.com/showdates/?api_key=%3C296396b1-e4ba-4315-9b34-bc3ff9c12ea7%3E";
+
+
+axios 
+    .get(apiShowDates)
+    .then((listOfShows) => {
+        console.log(listOfShows);
+        renderShowCards(listOfShows);
+    })
+    .catch((error) => {
+        console.error(error);
+    });
 
 // ---- shows hidden titles ----
 
@@ -51,6 +36,7 @@ hiddenTitle3.innerText = "Location";
 
 hiddenTitleContainer.append(hiddenTitle1, hiddenTitle2, hiddenTitle3);
 showWrapper.prepend(hiddenTitleContainer);
+
 
 // ----- shows ------
 
@@ -78,7 +64,7 @@ function showsOption(listOfShows) {
    
     let showVenue = document.createElement("p");
     showVenue.classList.add("shows__venue");
-    showVenue.innerHTML = listOfShows.venue;
+    showVenue.innerHTML = listOfShows.place;
   
     let showLocationBox = document.createElement("div");
     showLocationBox.classList.add("shows__info");
@@ -107,20 +93,23 @@ function showsOption(listOfShows) {
 
 // ---- function for rendering shows list ----
 
-function renderShowCards() {
+function renderShowCards(apiShowDates) {
+    console.log(apiShowDates.data);
     const showSectionEl = document.querySelector(".shows__container");
 
-    for (let i = 0; i < listOfShows.length; i++) {
-        showSectionEl.appendChild(showsOption(listOfShows[i]));
+    for (let i = 0; i < apiShowDates.data.length; i++) {
+        showSectionEl.appendChild(showsOption(apiShowDates.data[i]));
        
         let lineBreak = document.createElement("hr");
         lineBreak.classList.add("shows__linebreak")
         showSectionEl.appendChild(lineBreak);
     }
 }
-renderShowCards();
+// renderShowCards();
 
 // ---- shows - selected states ----
+// needs to be fixed selected states not working 
+
 let showsContain = document.querySelector(".shows__container");
 let showsRow = showsContain.getElementsByClassName("shows__card");
 
@@ -135,8 +124,11 @@ for (let i = 0; i < showsRow.length; i++) {
   });
 }
 
-let showsHeaders = document.querySelector(".shows__title");
+let showsHeaders = document.getElementsByClassName("shows__title");
+// let showsHeaders = document.querySelector(".shows__title");
+console.log(showsHeaders);
 
 showsHeaders.addEventListener("click", function() {
     showsHeaders.classList.toggle(".shows__titles--selected");
 });
+
