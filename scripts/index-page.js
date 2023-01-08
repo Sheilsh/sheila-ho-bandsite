@@ -1,24 +1,27 @@
 // ----- Form Comment Display -----
 
-// ---- array of users and comments ----
+// -------------- axios comments --------------------
 
-let listOfComments = [
-    { 
-        name: "Connor Walton", 
-        date: "02/17/2021", 
-        comment: "This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.",
-    },
-    { 
-        name: "Emilie Beach", 
-        date: "01/09/2021", 
-        comment: "I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.",
-    },
-    { 
-        name: "Miles Acosta", 
-        date: "12/20/2020", 
-        comment: "I can't stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can't get enough.",
-    },
-];
+const apiURL = "https://project-1-api.herokuapp.com/register";
+const apiKey = "971e0594-0b16-49ba-9789-f91558cdc707";
+
+const apiComments = "https://project-1-api.herokuapp.com/comments/?api_key=%3C971e0594-0b16-49ba-9789-f91558cdc707%3E";
+
+
+axios 
+    // .get(apiURL)
+    // .then((register) => {
+    //     console.log(register);
+    // })
+    .get(apiComments)
+    .then((listOfComments) => {
+        console.log(listOfComments);
+
+        renderUsersComments(listOfComments);
+    })
+    .catch((error) => {
+        console.error(error);
+      });
 
 // ---- funtion for elements based on list of comments array ----
 
@@ -49,11 +52,12 @@ function commentCards(listOfComments) {
     let userName = document.createElement("p");
     userName.classList.add("comments__username");
     userName.innerHTML = listOfComments.name;
+    console.log(listOfComments.name);
 
     // user time
     let userDate = document.createElement("p");
     userDate.classList.add("comments__date");
-    userDate.innerHTML = listOfComments.date;
+    userDate.innerHTML = listOfComments.timestamp;
 
     // user comment
     let userComment = document.createElement("p");
@@ -70,18 +74,34 @@ function commentCards(listOfComments) {
 }
 
 // ---- function for rendering users to the html ----
-function renderUsersComments() {
+function renderUsersComments(apiComments) {
+    console.log(apiComments.data);
     const commentSectionEl = document.querySelector(".comments__container");
 
-    for (let i = 0; i < listOfComments.length; i++) {
-        commentSectionEl.appendChild(commentCards(listOfComments[i]));
+    for (let i = 0; i < apiComments.data.length; i++) {
+        commentSectionEl.appendChild(commentCards(apiComments.data[i]));
        
         let lineBreak = document.createElement("hr");
         lineBreak.classList.add("comments__linebreak")
         commentSectionEl.appendChild(lineBreak);
     }
 }
-renderUsersComments();
+// renderUsersComments();
+
+// ---- function for time stamp ----
+
+function relativeDays(timestamp) {
+    const rtf = new Intl.RelativeTimeFormat('en', {
+      numeric: 'auto',
+    });
+    const oneDayInMs = 1000 * 60 * 60 * 24;
+    const daysDifference = Math.round(
+      (timestamp - new Date().getTime()) / oneDayInMs,
+    );
+  
+    return rtf.format(daysDifference, 'day');
+}
+
 
 // ---- form comment submit ----
 const formEl = document.querySelector(".comments__form");
@@ -98,11 +118,12 @@ function displayComments(event) {
 
     if (validation) {
 
-        const DateTime = luxon.DateTime;
+        // const DateTime = luxon.DateTime;
 
         const newComment = {
             name: name,
-            date: DateTime.now().toRelative(),
+            // date: DateTime.now().toRelative(),
+            date: timestamp,
             comment: comment,
         };
         
