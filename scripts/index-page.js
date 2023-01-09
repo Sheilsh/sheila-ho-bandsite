@@ -11,10 +11,6 @@ const apiShowDates = "https://project-1-api.herokuapp.com/comments/?api_key=%3C9
 
 
 axios 
-    // .get(apiURL)
-    // .then((register) => {
-    //     console.log(register);
-    // })
     .get(apiShowDates)
     .then((listOfComments) => {
         console.log(listOfComments);
@@ -54,7 +50,6 @@ function commentCards(listOfComments) {
     let userName = document.createElement("p");
     userName.classList.add("comments__username");
     userName.innerHTML = listOfComments.name;
-    console.log(listOfComments.name);
 
     // user time
     let userDate = document.createElement("p");
@@ -90,22 +85,6 @@ function renderUsersComments(apiComments) {
 }
 // renderUsersComments();
 
-// ---- function for time stamp ----
-// need to fix time stamp 
-
-// function relativeDays(timestamp) {
-//     const rtf = new Intl.RelativeTimeFormat('en', {
-//       numeric: 'auto',
-//     });
-//     const oneDayInMs = 1000 * 60 * 60 * 24;
-//     const daysDifference = Math.round(
-//       (timestamp - new Date().getTime()) / oneDayInMs,
-//     );
-  
-//     return rtf.format(daysDifference, 'day');
-// }
-
-
 // ---- form comment submit ----
 const formEl = document.querySelector(".comments__form");
 const formName = document.querySelector("#name");
@@ -125,7 +104,8 @@ function displayComment(event) {
         const newComment = {
             name: name,
             // date: DateTime.now().toRelative(),
-            date: timestamp,
+            timestamp: DateTime.now().toRelative(),
+            // date: timestamp,
             comment: comment,
         };
         
@@ -142,3 +122,7 @@ function displayComment(event) {
 }
 
 formEl.addEventListener("submit", displayComment);
+
+// ---- function for time stamp ----
+// need to fix time unix-timestamp 
+

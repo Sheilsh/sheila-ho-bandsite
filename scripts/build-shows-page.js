@@ -94,7 +94,6 @@ function showsOption(listOfShows) {
 // ---- function for rendering shows list ----
 
 function renderShowCards(apiShowDates) {
-    console.log(apiShowDates.data);
     const showSectionEl = document.querySelector(".shows__container");
 
     for (let i = 0; i < apiShowDates.data.length; i++) {
@@ -104,31 +103,28 @@ function renderShowCards(apiShowDates) {
         lineBreak.classList.add("shows__linebreak")
         showSectionEl.appendChild(lineBreak);
     }
+
+    // ---- shows - selected states ----
+
+    let showsContain = document.querySelector(".shows__container");
+    let showsRow = showsContain.getElementsByClassName("shows__card");
+
+    for (let i = 0; i < showsRow.length; i++) {
+    showsRow[i].addEventListener("click", function() {
+        let selected = document.getElementsByClassName("active");
+
+        if (selected.length > 0) {
+        selected[0].className = selected[0].className.replace(" active", "");
+        }
+        this.className += " active";
+    });
+    }
+
+    let showsHeaders = document.getElementsByClassName("shows__title");
+
+    showsHeaders[0].addEventListener("click", function() {
+        showsHeaders.classList.toggle(".shows__titles--selected");
+    });
 }
 // renderShowCards();
-
-// ---- shows - selected states ----
-// needs to be fixed selected states not working 
-
-let showsContain = document.querySelector(".shows__container");
-let showsRow = showsContain.getElementsByClassName("shows__card");
-
-for (let i = 0; i < showsRow.length; i++) {
-  showsRow[i].addEventListener("click", function() {
-    let selected = document.getElementsByClassName("active");
-
-    if (selected.length > 0) {
-      selected[0].className = selected[0].className.replace(" active", "");
-    }
-    this.className += " active";
-  });
-}
-
-let showsHeaders = document.getElementsByClassName("shows__title");
-// let showsHeaders = document.querySelector(".shows__title");
-console.log(showsHeaders);
-
-showsHeaders.addEventListener("click", function() {
-    showsHeaders.classList.toggle(".shows__titles--selected");
-});
 
